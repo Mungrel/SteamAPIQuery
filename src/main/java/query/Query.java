@@ -9,8 +9,9 @@ public class Query {
 	
 	
 	public static String getPlayerSummary(String steamID){
-		String url = "http://api.steampowered.com/ISteamUser/GetPlayerSummaries/v0002/?key="+STEAM_API_KEY+"&steamids="+steamID+"&format=json";
 		Client client = ClientBuilder.newClient();
+		String url = "http://api.steampowered.com/ISteamUser/GetPlayerSummaries/v0002/?key="+STEAM_API_KEY+"&steamids="+steamID+"&format=json";
 		return client.target(url).request().get(String.class);
 	}
+	
 }
