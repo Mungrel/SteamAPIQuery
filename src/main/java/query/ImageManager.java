@@ -26,5 +26,4 @@ public class ImageManager {
 		img = ImageIO.read(path.toFile());
 		return img;
 	}
-
 }
