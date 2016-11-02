@@ -15,6 +15,7 @@ import javax.swing.SwingConstants;
 import java.awt.Font;
 import javax.swing.UIManager;
 import java.awt.Color;
+import javax.swing.JButton;
 
 public class MainFrame extends JFrame {
 
@@ -52,15 +53,22 @@ public class MainFrame extends JFrame {
 		contentPane.setLayout(sl_contentPane);
 		
 		txtEnterASteam = new JTextField();
+		sl_contentPane.putConstraint(SpringLayout.NORTH, txtEnterASteam, 83, SpringLayout.NORTH, contentPane);
+		sl_contentPane.putConstraint(SpringLayout.WEST, txtEnterASteam, 5, SpringLayout.WEST, contentPane);
+		sl_contentPane.putConstraint(SpringLayout.SOUTH, txtEnterASteam, -50, SpringLayout.SOUTH, contentPane);
+		sl_contentPane.putConstraint(SpringLayout.EAST, txtEnterASteam, 0, SpringLayout.EAST, contentPane);
 		txtEnterASteam.setForeground(Color.LIGHT_GRAY);
 		txtEnterASteam.setFont(new Font("Segoe UI", Font.PLAIN, 15));
 		txtEnterASteam.setHorizontalAlignment(SwingConstants.CENTER);
 		txtEnterASteam.setText("Enter a Steam64 ID");
-		sl_contentPane.putConstraint(SpringLayout.NORTH, txtEnterASteam, 78, SpringLayout.NORTH, contentPane);
-		sl_contentPane.putConstraint(SpringLayout.WEST, txtEnterASteam, 0, SpringLayout.WEST, contentPane);
-		sl_contentPane.putConstraint(SpringLayout.SOUTH, txtEnterASteam, 112, SpringLayout.NORTH, contentPane);
-		sl_contentPane.putConstraint(SpringLayout.EAST, txtEnterASteam, -5, SpringLayout.EAST, contentPane);
 		contentPane.add(txtEnterASteam);
 		txtEnterASteam.setColumns(10);
+		
+		JButton btnSearch = new JButton("Search");
+		sl_contentPane.putConstraint(SpringLayout.NORTH, btnSearch, 17, SpringLayout.SOUTH, txtEnterASteam);
+		sl_contentPane.putConstraint(SpringLayout.WEST, btnSearch, 137, SpringLayout.WEST, txtEnterASteam);
+		sl_contentPane.putConstraint(SpringLayout.SOUTH, btnSearch, -10, SpringLayout.SOUTH, contentPane);
+		sl_contentPane.putConstraint(SpringLayout.EAST, btnSearch, -137, SpringLayout.EAST, contentPane);
+		contentPane.add(btnSearch);
 	}
 }
