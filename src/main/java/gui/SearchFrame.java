@@ -15,7 +15,7 @@ import javax.swing.SpringLayout;
 import javax.swing.SwingConstants;
 import javax.swing.border.EmptyBorder;
 
-public class MainFrame extends JFrame {
+public class SearchFrame extends JFrame {
 
 	private JPanel contentPane;
 	private JTextField txtEnterASteam;
@@ -27,7 +27,7 @@ public class MainFrame extends JFrame {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
-					MainFrame frame = new MainFrame();
+					SearchFrame frame = new SearchFrame();
 					frame.setVisible(true);
 				} catch (Exception e) {
 					e.printStackTrace();
@@ -39,7 +39,7 @@ public class MainFrame extends JFrame {
 	/**
 	 * Create the frame.
 	 */
-	public MainFrame() {
+	public SearchFrame() {
 		setResizable(false);
 		setTitle("SteamQuery");
 		setIconImage(new ImageIcon("src/main/resources/images/share_steam_logo.png").getImage());
