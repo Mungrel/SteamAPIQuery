@@ -8,6 +8,7 @@ public class TestPlayerSummary {
 
 	@Test
 	public void test() {
+		@SuppressWarnings("unused")
 		PlayerSummary ps = QueryManager.getPlayerSummary("76561198054259683");
 	}
 

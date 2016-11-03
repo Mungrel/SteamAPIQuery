@@ -44,7 +44,7 @@ public class MainFrame extends JFrame {
 		setTitle("SteamQuery");
 		setIconImage(new ImageIcon("src/main/resources/images/share_steam_logo.png").getImage());
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setBounds(100, 100, 394, 216);
+		setBounds(100, 100, 394, 147);
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);
@@ -52,10 +52,10 @@ public class MainFrame extends JFrame {
 		contentPane.setLayout(sl_contentPane);
 		
 		txtEnterASteam = new JTextField();
-		sl_contentPane.putConstraint(SpringLayout.NORTH, txtEnterASteam, 83, SpringLayout.NORTH, contentPane);
+		sl_contentPane.putConstraint(SpringLayout.NORTH, txtEnterASteam, 10, SpringLayout.NORTH, contentPane);
 		sl_contentPane.putConstraint(SpringLayout.WEST, txtEnterASteam, 5, SpringLayout.WEST, contentPane);
-		sl_contentPane.putConstraint(SpringLayout.SOUTH, txtEnterASteam, 117, SpringLayout.NORTH, contentPane);
-		sl_contentPane.putConstraint(SpringLayout.EAST, txtEnterASteam, 0, SpringLayout.EAST, contentPane);
+		sl_contentPane.putConstraint(SpringLayout.SOUTH, txtEnterASteam, 44, SpringLayout.NORTH, contentPane);
+		sl_contentPane.putConstraint(SpringLayout.EAST, txtEnterASteam, -5, SpringLayout.EAST, contentPane);
 		txtEnterASteam.setForeground(Color.LIGHT_GRAY);
 		txtEnterASteam.setFont(new Font("Segoe UI", Font.PLAIN, 15));
 		txtEnterASteam.setHorizontalAlignment(SwingConstants.CENTER);
@@ -65,10 +65,10 @@ public class MainFrame extends JFrame {
 		txtEnterASteam.setColumns(10);
 		
 		JButton btnSearch = new JButton("Search");
-		sl_contentPane.putConstraint(SpringLayout.NORTH, btnSearch, 17, SpringLayout.SOUTH, txtEnterASteam);
-		sl_contentPane.putConstraint(SpringLayout.WEST, btnSearch, 142, SpringLayout.WEST, contentPane);
+		sl_contentPane.putConstraint(SpringLayout.NORTH, btnSearch, 25, SpringLayout.SOUTH, txtEnterASteam);
+		sl_contentPane.putConstraint(SpringLayout.WEST, btnSearch, 139, SpringLayout.WEST, contentPane);
 		sl_contentPane.putConstraint(SpringLayout.SOUTH, btnSearch, -10, SpringLayout.SOUTH, contentPane);
-		sl_contentPane.putConstraint(SpringLayout.EAST, btnSearch, -137, SpringLayout.EAST, contentPane);
+		sl_contentPane.putConstraint(SpringLayout.EAST, btnSearch, -140, SpringLayout.EAST, contentPane);
 		btnSearch.setBackground(Color.WHITE);
 		btnSearch.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
