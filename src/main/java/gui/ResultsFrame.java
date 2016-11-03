@@ -1,15 +1,27 @@
 package gui;
 
-import java.awt.BorderLayout;
 import java.awt.EventQueue;
+import java.awt.Font;
+import java.awt.image.BufferedImage;
+import java.io.File;
+import java.io.IOException;
 
+import javax.imageio.ImageIO;
 import javax.swing.ImageIcon;
 import javax.swing.JFrame;
-import javax.swing.JPanel;
-import javax.swing.border.EmptyBorder;
-import javax.swing.JTabbedPane;
 import javax.swing.JLabel;
-import java.awt.Font;
+import javax.swing.JPanel;
+import javax.swing.JTabbedPane;
+import javax.swing.SwingConstants;
+import javax.swing.border.EmptyBorder;
+import javax.swing.border.BevelBorder;
+import javax.swing.border.CompoundBorder;
+import javax.swing.border.EtchedBorder;
+import javax.swing.border.LineBorder;
+import java.awt.Color;
+import javax.swing.border.MatteBorder;
+import javax.swing.border.SoftBevelBorder;
+import javax.swing.border.TitledBorder;
 
 public class ResultsFrame extends JFrame {
 
@@ -59,8 +71,18 @@ public class ResultsFrame extends JFrame {
 		lblDisplayname.setBounds(10, 11, 278, 64);
 		contentPane.add(lblDisplayname);
 		
+		
 		JPanel avatarImagePanel = new JPanel();
+		avatarImagePanel.setBorder(new TitledBorder(null, "", TitledBorder.LEADING, TitledBorder.TOP, null, null));
 		avatarImagePanel.setBounds(328, 11, 64, 64);
+		
+		JLabel imageLabel = new JLabel("<html>No Avatar<br>Available</html>", SwingConstants.CENTER);
+		imageLabel.setFont(new Font("Segoe UI", Font.PLAIN, 11));
+		imageLabel.setHorizontalAlignment(SwingConstants.CENTER);
+		avatarImagePanel.add(imageLabel);
+		
 		contentPane.add(avatarImagePanel);
+		
+		
 	}
 }
