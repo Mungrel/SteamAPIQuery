@@ -15,6 +15,7 @@ import javax.swing.SpringLayout;
 import javax.swing.SwingConstants;
 import javax.swing.border.EmptyBorder;
 
+@SuppressWarnings("serial")
 public class SearchFrame extends JFrame {
 
 	private JPanel contentPane;
