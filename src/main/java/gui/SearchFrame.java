@@ -41,7 +41,7 @@ public class SearchFrame extends JFrame {
 	 */
 	public SearchFrame() {
 		setResizable(false);
-		setTitle("SteamQuery");
+		setTitle("SteamQuery - Search");
 		setIconImage(new ImageIcon("src/main/resources/images/share_steam_logo.png").getImage());
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 394, 147);
