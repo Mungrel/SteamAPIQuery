@@ -18,6 +18,7 @@ import javax.swing.SwingConstants;
 import javax.swing.border.EmptyBorder;
 
 import domain.PlayerSummary;
+import listeners.SearchTextKeyListener;
 import query.ImageManager;
 import query.QueryManager;
 
@@ -68,6 +69,7 @@ public class SearchFrame extends JFrame {
 		txtEnterASteam.setHorizontalAlignment(SwingConstants.CENTER);
 		txtEnterASteam.setText("Enter a Steam64 ID");
 		txtEnterASteam.setSelectionStart(0);
+		txtEnterASteam.addKeyListener(new SearchTextKeyListener(txtEnterASteam));
 		contentPane.add(txtEnterASteam);
 		txtEnterASteam.setColumns(10);
 		
