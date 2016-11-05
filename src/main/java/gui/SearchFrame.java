@@ -88,6 +88,7 @@ public class SearchFrame extends JFrame {
 					e1.printStackTrace();
 				}
 				ResultsFrame.buildResults(ps, playerAvatar);
+				ResultsFrame.resultsFrame.setVisible(true);
 			}
 		});
 		contentPane.add(btnSearch);

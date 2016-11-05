@@ -70,8 +70,10 @@ public class ResultsFrame extends JFrame {
 		JPanel avatarImagePanel = new JPanel();
 		avatarImagePanel.setBorder(new TitledBorder(null, "", TitledBorder.LEADING, TitledBorder.TOP, null, null));
 		avatarImagePanel.setBounds(328, 11, 64, 64);
+		avatarImagePanel.setLayout(null);
 		
 		avatarImageLabel = new JLabel("<html>No Avatar<br>Available</html>", SwingConstants.CENTER);
+		avatarImageLabel.setBounds(0, 0, 64, 64);
 		avatarImageLabel.setFont(new Font("Segoe UI", Font.PLAIN, 11));
 		avatarImageLabel.setHorizontalAlignment(SwingConstants.CENTER);
 		avatarImagePanel.add(avatarImageLabel);
@@ -82,6 +84,7 @@ public class ResultsFrame extends JFrame {
 	public static void buildResults(PlayerSummary ps, BufferedImage playerAvatar) {
 		if (playerAvatar != null){
 			resultsFrame.avatarImageLabel.setIcon(new ImageIcon(playerAvatar));
+			resultsFrame.avatarImageLabel.setText("");
 		}
 		//TODO Set relevant labels with PlayerSummary fields
 	}

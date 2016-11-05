@@ -25,7 +25,7 @@ public class PlayerSummary {
 		this.personaName = playerSummary.getString("personaname");
 		this.lastLogOff = playerSummary.getLong("lastlogoff");
 		this.profileURL = playerSummary.getString("profileurl");
-		this.avatarImageURL = playerSummary.getString("avatar");
+		this.avatarImageURL = playerSummary.getString("avatarmedium");
 		this.personaState = playerSummary.getInt("personastate");
 		this.realName = playerSummary.getString("realname");
 		this.timeCreated = playerSummary.getLong("timecreated");
