@@ -1,4 +1,4 @@
-package gui;
+package frames;
 
 import java.awt.EventQueue;
 import java.awt.Font;

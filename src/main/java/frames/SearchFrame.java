@@ -1,4 +1,4 @@
-package gui;
+package frames;
 
 import java.awt.Color;
 import java.awt.EventQueue;
