@@ -20,6 +20,7 @@ public class ResultsFrame extends JFrame {
 
 	private JPanel contentPane;
 	private JLabel avatarImageLabel;
+	private JLabel lblDisplayname;
 	protected static ResultsFrame resultsFrame = new ResultsFrame();
 	
 
@@ -61,7 +62,10 @@ public class ResultsFrame extends JFrame {
 		tabbedPane.addTab("Summary", null, playerSummaryPanel, null);
 		tabbedPane.setEnabledAt(0, true);
 		
-		JLabel lblDisplayname = new JLabel("DisplayName");
+		JPanel friendsPanel = new JPanel();
+		tabbedPane.addTab("Friends", null, friendsPanel, null);
+		
+		lblDisplayname = new JLabel("DisplayName");
 		lblDisplayname.setFont(new Font("Segoe UI", Font.PLAIN, 15));
 		lblDisplayname.setBounds(10, 11, 278, 64);
 		contentPane.add(lblDisplayname);
@@ -87,5 +91,6 @@ public class ResultsFrame extends JFrame {
 			resultsFrame.avatarImageLabel.setText("");
 		}
 		//TODO Set relevant labels with PlayerSummary fields
+		resultsFrame.lblDisplayname.setText(ps.getPersonaName());
 	}
 }
