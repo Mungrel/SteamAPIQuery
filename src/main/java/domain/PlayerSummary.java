@@ -15,8 +15,8 @@ public class PlayerSummary {
 	private String realName;
 	private long timeCreated;
 	private String country;
-	
-	public PlayerSummary(String json){
+
+	public PlayerSummary(String json) {
 		JSONObject obj = new JSONObject(json).getJSONObject("response");
 		JSONObject playerSummary = obj.getJSONArray("players").getJSONObject(0);
 		this.steamID = playerSummary.getString("steamid");
@@ -75,5 +75,5 @@ public class PlayerSummary {
 	public String getCountry() {
 		return country;
 	}
-	
+
 }

@@ -14,10 +14,10 @@ import javax.ws.rs.client.ClientBuilder;
 import javax.ws.rs.core.Response;
 
 public class ImageManager {
-	
+
 	private static String TMP_IMG_DIR = "C:\\Users\\Nick\\Desktop";
-	
-	public static BufferedImage getImage(String url) throws IOException{
+
+	public static BufferedImage getImage(String url) throws IOException {
 		Client client = ClientBuilder.newClient();
 		Response response = client.target(url).request().get();
 		InputStream in = response.readEntity(InputStream.class);

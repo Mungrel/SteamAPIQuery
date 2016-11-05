@@ -1,4 +1,5 @@
 package responses;
+
 import org.junit.Test;
 
 import domain.PlayerSummary;

@@ -33,6 +33,7 @@ public class SearchFrame extends JFrame {
 	 */
 	public static void main(String[] args) {
 		EventQueue.invokeLater(new Runnable() {
+			@Override
 			public void run() {
 				try {
 					SearchFrame frame = new SearchFrame();
@@ -58,7 +59,7 @@ public class SearchFrame extends JFrame {
 		setContentPane(contentPane);
 		SpringLayout sl_contentPane = new SpringLayout();
 		contentPane.setLayout(sl_contentPane);
-		
+
 		txtEnterASteam = new JTextField();
 		sl_contentPane.putConstraint(SpringLayout.NORTH, txtEnterASteam, 10, SpringLayout.NORTH, contentPane);
 		sl_contentPane.putConstraint(SpringLayout.WEST, txtEnterASteam, 5, SpringLayout.WEST, contentPane);
@@ -72,7 +73,7 @@ public class SearchFrame extends JFrame {
 		txtEnterASteam.addKeyListener(new SearchTextKeyListener(txtEnterASteam));
 		contentPane.add(txtEnterASteam);
 		txtEnterASteam.setColumns(10);
-		
+
 		JButton btnSearch = new JButton("Search");
 		sl_contentPane.putConstraint(SpringLayout.NORTH, btnSearch, 25, SpringLayout.SOUTH, txtEnterASteam);
 		sl_contentPane.putConstraint(SpringLayout.WEST, btnSearch, 139, SpringLayout.WEST, contentPane);
@@ -80,6 +81,7 @@ public class SearchFrame extends JFrame {
 		sl_contentPane.putConstraint(SpringLayout.EAST, btnSearch, -140, SpringLayout.EAST, contentPane);
 		btnSearch.setBackground(Color.WHITE);
 		btnSearch.addActionListener(new ActionListener() {
+			@Override
 			public void actionPerformed(ActionEvent e) {
 				PlayerSummary ps = QueryManager.getPlayerSummary(txtEnterASteam.getText());
 				BufferedImage playerAvatar = null;
@@ -94,7 +96,7 @@ public class SearchFrame extends JFrame {
 			}
 		});
 		contentPane.add(btnSearch);
-		
+
 		this.getRootPane().setDefaultButton(btnSearch);
 	}
 }

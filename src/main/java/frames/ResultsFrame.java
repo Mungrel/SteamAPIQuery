@@ -22,13 +22,13 @@ public class ResultsFrame extends JFrame {
 	private JLabel avatarImageLabel;
 	private JLabel lblDisplayname;
 	protected static ResultsFrame resultsFrame = new ResultsFrame();
-	
 
 	/**
 	 * Launch the application.
 	 */
 	public static void main(String[] args) {
 		EventQueue.invokeLater(new Runnable() {
+			@Override
 			public void run() {
 				try {
 					resultsFrame.setVisible(true);
@@ -52,45 +52,44 @@ public class ResultsFrame extends JFrame {
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
-		
-		JTabbedPane tabbedPane = new JTabbedPane(JTabbedPane.TOP);
+
+		JTabbedPane tabbedPane = new JTabbedPane(SwingConstants.TOP);
 		tabbedPane.setBounds(10, 80, 382, 313);
 		tabbedPane.setFocusable(false);
 		contentPane.add(tabbedPane);
-		
+
 		JPanel playerSummaryPanel = new JPanel();
 		tabbedPane.addTab("Summary", null, playerSummaryPanel, null);
 		tabbedPane.setEnabledAt(0, true);
-		
+
 		JPanel friendsPanel = new JPanel();
 		tabbedPane.addTab("Friends", null, friendsPanel, null);
-		
+
 		lblDisplayname = new JLabel("DisplayName");
 		lblDisplayname.setFont(new Font("Segoe UI", Font.PLAIN, 15));
 		lblDisplayname.setBounds(10, 11, 278, 64);
 		contentPane.add(lblDisplayname);
-		
-		
+
 		JPanel avatarImagePanel = new JPanel();
 		avatarImagePanel.setBorder(new TitledBorder(null, "", TitledBorder.LEADING, TitledBorder.TOP, null, null));
 		avatarImagePanel.setBounds(328, 11, 64, 64);
 		avatarImagePanel.setLayout(null);
-		
+
 		avatarImageLabel = new JLabel("<html>No Avatar<br>Available</html>", SwingConstants.CENTER);
 		avatarImageLabel.setBounds(0, 0, 64, 64);
 		avatarImageLabel.setFont(new Font("Segoe UI", Font.PLAIN, 11));
 		avatarImageLabel.setHorizontalAlignment(SwingConstants.CENTER);
 		avatarImagePanel.add(avatarImageLabel);
-		
+
 		contentPane.add(avatarImagePanel);
 	}
-	
+
 	public static void buildResults(PlayerSummary ps, BufferedImage playerAvatar) {
-		if (playerAvatar != null){
+		if (playerAvatar != null) {
 			resultsFrame.avatarImageLabel.setIcon(new ImageIcon(playerAvatar));
 			resultsFrame.avatarImageLabel.setText("");
 		}
-		//TODO Set relevant labels with PlayerSummary fields
+		// TODO Set relevant labels with PlayerSummary fields
 		resultsFrame.lblDisplayname.setText(ps.getPersonaName());
 	}
 }
