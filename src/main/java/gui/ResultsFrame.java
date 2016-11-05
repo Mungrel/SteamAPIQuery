@@ -13,6 +13,8 @@ import javax.swing.SwingConstants;
 import javax.swing.border.EmptyBorder;
 import javax.swing.border.TitledBorder;
 
+import domain.PlayerSummary;
+
 @SuppressWarnings("serial")
 public class ResultsFrame extends JFrame {
 
@@ -77,7 +79,10 @@ public class ResultsFrame extends JFrame {
 		contentPane.add(avatarImagePanel);
 	}
 	
-	public static void setAvatarImage(BufferedImage img){
-		resultsFrame.avatarImageLabel.setIcon(new ImageIcon(img));
+	public static void buildResults(PlayerSummary ps, BufferedImage playerAvatar) {
+		if (playerAvatar != null){
+			resultsFrame.avatarImageLabel.setIcon(new ImageIcon(playerAvatar));
+		}
+		//TODO Set relevant labels with PlayerSummary fields
 	}
 }

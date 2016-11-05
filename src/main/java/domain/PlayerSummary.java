@@ -10,7 +10,7 @@ public class PlayerSummary {
 	private String personaName;
 	private long lastLogOff;
 	private String profileURL;
-	private String avatarFullImageURL;
+	private String avatarImageURL;
 	private int personaState;
 	private String realName;
 	private long timeCreated;
@@ -25,7 +25,7 @@ public class PlayerSummary {
 		this.personaName = playerSummary.getString("personaname");
 		this.lastLogOff = playerSummary.getLong("lastlogoff");
 		this.profileURL = playerSummary.getString("profileurl");
-		this.avatarFullImageURL = playerSummary.getString("avatar");
+		this.avatarImageURL = playerSummary.getString("avatar");
 		this.personaState = playerSummary.getInt("personastate");
 		this.realName = playerSummary.getString("realname");
 		this.timeCreated = playerSummary.getLong("timecreated");
@@ -56,8 +56,8 @@ public class PlayerSummary {
 		return profileURL;
 	}
 
-	public String getAvatarFullImageURL() {
-		return avatarFullImageURL;
+	public String getAvatarImageURL() {
+		return avatarImageURL;
 	}
 
 	public int getPersonaState() {

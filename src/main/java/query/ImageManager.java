@@ -22,8 +22,7 @@ public class ImageManager {
 		InputStream in = response.readEntity(InputStream.class);
 		Path path = Paths.get(TMP_IMG_DIR, "avatar.png");
 		Files.copy(in, path);
-		BufferedImage img = null;
-		img = ImageIO.read(path.toFile());
+		BufferedImage img = ImageIO.read(path.toFile());
 		return img;
 	}
 }

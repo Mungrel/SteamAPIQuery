@@ -5,6 +5,8 @@ import java.awt.EventQueue;
 import java.awt.Font;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.awt.image.BufferedImage;
+import java.io.IOException;
 
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
@@ -14,6 +16,10 @@ import javax.swing.JTextField;
 import javax.swing.SpringLayout;
 import javax.swing.SwingConstants;
 import javax.swing.border.EmptyBorder;
+
+import domain.PlayerSummary;
+import query.ImageManager;
+import query.QueryManager;
 
 @SuppressWarnings("serial")
 public class SearchFrame extends JFrame {
@@ -73,7 +79,15 @@ public class SearchFrame extends JFrame {
 		btnSearch.setBackground(Color.WHITE);
 		btnSearch.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				System.out.println("Hello");
+				PlayerSummary ps = QueryManager.getPlayerSummary(txtEnterASteam.getText());
+				BufferedImage playerAvatar = null;
+				try {
+					playerAvatar = ImageManager.getImage(ps.getAvatarImageURL());
+				} catch (IOException e1) {
+					System.out.println("Failed to load avatar image");
+					e1.printStackTrace();
+				}
+				ResultsFrame.buildResults(ps, playerAvatar);
 			}
 		});
 		contentPane.add(btnSearch);
