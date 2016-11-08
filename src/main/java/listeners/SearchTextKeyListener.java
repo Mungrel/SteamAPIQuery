@@ -24,15 +24,19 @@ public class SearchTextKeyListener implements KeyListener {
 
 	@Override
 	public void keyReleased(KeyEvent e) {
-		if (searchTextField.getText().equals("")) {
-			searchTextField.setText("Enter a Steam64 ID");
-			searchTextField.setForeground(Color.LIGHT_GRAY);
-			searchTextField.setSelectionStart(0);
-		} else if (searchTextField.getText().equals("Enter a Steam64 ID")) {
-			searchTextField.setForeground(Color.LIGHT_GRAY);
-			searchTextField.setSelectionStart(0);
+		String text = searchTextField.getText();
+		if (text.equals("")) {
+			toDefaultText();
+		} else if (text.equals("Enter a Steam64 ID")) {
+			toDefaultText();
 		} else {
 			searchTextField.setForeground(Color.BLACK);
 		}
+	}
+	
+	private void toDefaultText(){
+		searchTextField.setText("Enter a Steam64 ID");
+		searchTextField.setForeground(Color.LIGHT_GRAY);
+		searchTextField.setSelectionStart(0);
 	}
 }
