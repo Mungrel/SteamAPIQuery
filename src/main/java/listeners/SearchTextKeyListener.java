@@ -33,8 +33,8 @@ public class SearchTextKeyListener implements KeyListener {
 			searchTextField.setForeground(Color.BLACK);
 		}
 	}
-	
-	private void toDefaultText(){
+
+	private void toDefaultText() {
 		searchTextField.setText("Enter a Steam64 ID");
 		searchTextField.setForeground(Color.LIGHT_GRAY);
 		searchTextField.setSelectionStart(0);

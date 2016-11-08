@@ -26,12 +26,12 @@ public class SearchFrame extends JFrame {
 	private JPanel contentPane;
 	private JTextField txtEnterASteam;
 	protected static SearchFrame searchFrame = new SearchFrame();
-	
-	public static void open(){
-		searchFrame.setLocationRelativeTo(null); //centre the frame
+
+	public static void open() {
+		searchFrame.setLocationRelativeTo(null); // centre the frame
 		searchFrame.setVisible(true);
 	}
-	
+
 	private SearchFrame() {
 		setResizable(false);
 		setTitle("SteamQuery - Search");

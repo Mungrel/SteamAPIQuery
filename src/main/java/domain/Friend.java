@@ -5,12 +5,12 @@ import org.json.JSONObject;
 import query.QueryManager;
 
 public class Friend {
-	
+
 	private String steam64ID;
 	private String relationship;
 	private Long friendSince;
-	
-	public Friend(String json){
+
+	public Friend(String json) {
 		JSONObject obj = new JSONObject(json);
 		this.steam64ID = obj.getString("steamid");
 		this.relationship = obj.getString("relationship");
@@ -28,9 +28,10 @@ public class Friend {
 	public Long getFriendSince() {
 		return friendSince;
 	}
-	
-	//Queries and builds a PlayerSummary object from this friend (will be used to get their avatar, display name, etc)
-	public PlayerSummary getPlayerSummary(){
+
+	// Queries and builds a PlayerSummary object from this friend (will be used
+	// to get their avatar, display name, etc)
+	public PlayerSummary getPlayerSummary() {
 		return QueryManager.getPlayerSummary(this.steam64ID);
 	}
 }
