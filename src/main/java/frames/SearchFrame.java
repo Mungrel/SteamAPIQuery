@@ -7,6 +7,7 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.image.BufferedImage;
 import java.io.IOException;
+import java.util.List;
 
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
@@ -17,6 +18,7 @@ import javax.swing.SpringLayout;
 import javax.swing.SwingConstants;
 import javax.swing.border.EmptyBorder;
 
+import domain.Friend;
 import domain.PlayerSummary;
 import listeners.SearchTextKeyListener;
 import query.ImageManager;
@@ -84,6 +86,7 @@ public class SearchFrame extends JFrame {
 			@Override
 			public void actionPerformed(ActionEvent e) {
 				PlayerSummary ps = QueryManager.getPlayerSummary(txtEnterASteam.getText());
+				List<Friend> friendsList = QueryManager.getFriendsList(txtEnterASteam.getText());
 				BufferedImage playerAvatar = null;
 				try {
 					playerAvatar = ImageManager.getImage(ps.getAvatarImageURL());
