@@ -28,7 +28,7 @@ public class SearchFrame extends JFrame {
 	private JTextField txtEnterASteam;
 	protected static SearchFrame searchFrame = new SearchFrame();
 	
-	public static void openSearchFrame(){
+	public static void open(){
 		searchFrame.setLocationRelativeTo(null); //centre the frame
 		searchFrame.setVisible(true);
 	}
