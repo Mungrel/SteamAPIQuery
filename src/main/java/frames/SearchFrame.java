@@ -26,6 +26,7 @@ public class SearchFrame extends JFrame {
 
 	private JPanel contentPane;
 	private JTextField txtEnterASteam;
+	public static SearchFrame searchFrame = new SearchFrame();
 
 	/**
 	 * Launch the application.
@@ -35,8 +36,7 @@ public class SearchFrame extends JFrame {
 			@Override
 			public void run() {
 				try {
-					SearchFrame frame = new SearchFrame();
-					frame.setVisible(true);
+					searchFrame.setVisible(true);
 				} catch (Exception e) {
 					e.printStackTrace();
 				}
