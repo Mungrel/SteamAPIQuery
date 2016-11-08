@@ -13,7 +13,6 @@ import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
-import javax.swing.SpringLayout;
 import javax.swing.SwingConstants;
 import javax.swing.border.EmptyBorder;
 
@@ -57,14 +56,10 @@ public class SearchFrame extends JFrame {
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);
-		SpringLayout sl_contentPane = new SpringLayout();
-		contentPane.setLayout(sl_contentPane);
+		contentPane.setLayout(null);
 
 		txtEnterASteam = new JTextField();
-		sl_contentPane.putConstraint(SpringLayout.NORTH, txtEnterASteam, 10, SpringLayout.NORTH, contentPane);
-		sl_contentPane.putConstraint(SpringLayout.WEST, txtEnterASteam, 5, SpringLayout.WEST, contentPane);
-		sl_contentPane.putConstraint(SpringLayout.SOUTH, txtEnterASteam, 44, SpringLayout.NORTH, contentPane);
-		sl_contentPane.putConstraint(SpringLayout.EAST, txtEnterASteam, -5, SpringLayout.EAST, contentPane);
+		txtEnterASteam.setBounds(10, 15, 368, 34);
 		txtEnterASteam.setForeground(Color.LIGHT_GRAY);
 		txtEnterASteam.setFont(new Font("Segoe UI", Font.PLAIN, 15));
 		txtEnterASteam.setHorizontalAlignment(SwingConstants.CENTER);
@@ -75,10 +70,7 @@ public class SearchFrame extends JFrame {
 		txtEnterASteam.setColumns(10);
 
 		JButton btnSearch = new JButton("Search");
-		sl_contentPane.putConstraint(SpringLayout.NORTH, btnSearch, 25, SpringLayout.SOUTH, txtEnterASteam);
-		sl_contentPane.putConstraint(SpringLayout.WEST, btnSearch, 139, SpringLayout.WEST, contentPane);
-		sl_contentPane.putConstraint(SpringLayout.SOUTH, btnSearch, -10, SpringLayout.SOUTH, contentPane);
-		sl_contentPane.putConstraint(SpringLayout.EAST, btnSearch, -140, SpringLayout.EAST, contentPane);
+		btnSearch.setBounds(144, 74, 99, 29);
 		btnSearch.setBackground(Color.WHITE);
 		btnSearch.addActionListener(new ActionListener() {
 			@Override
