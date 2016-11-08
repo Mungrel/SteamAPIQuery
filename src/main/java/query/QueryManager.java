@@ -27,11 +27,11 @@ public class QueryManager {
 	
 	public static List<Friend> getFriendsList(String steamID){
 		Client client = ClientBuilder.newClient();
-		String url = "http://api.steampowered.com/ISteamUser/GetFriendList/v0001/?key=E9F252F7547BF2108C30DFDCD4C53F58&steamid="+STEAM_API_KEY;
+		String url = "http://api.steampowered.com/ISteamUser/GetFriendList/v0001/?key="+STEAM_API_KEY+"&steamid="+steamID;
 		String response = client.target(url).request().get(String.class);
 		client.close();
 		List<Friend> friendsList = new ArrayList<Friend>();
-		JSONArray friendsArray = new JSONObject(response).getJSONArray("friends");
+		JSONArray friendsArray = new JSONObject(response).getJSONObject("friendslist").getJSONArray("friends");
 		for (int i = 0; i < friendsArray.length(); i++){
 			friendsList.add(new Friend(friendsArray.getJSONObject(i).toString()));
 		}

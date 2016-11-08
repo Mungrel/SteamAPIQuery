@@ -86,7 +86,6 @@ public class SearchFrame extends JFrame {
 			@Override
 			public void actionPerformed(ActionEvent e) {
 				PlayerSummary ps = QueryManager.getPlayerSummary(txtEnterASteam.getText());
-				List<Friend> friendsList = QueryManager.getFriendsList(txtEnterASteam.getText());
 				BufferedImage playerAvatar = null;
 				try {
 					playerAvatar = ImageManager.getImage(ps.getAvatarImageURL());
