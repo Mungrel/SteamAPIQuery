@@ -2,6 +2,8 @@ package domain;
 
 import org.json.JSONObject;
 
+import query.QueryManager;
+
 public class Friend {
 	
 	private String steam64ID;
@@ -27,4 +29,8 @@ public class Friend {
 		return friendSince;
 	}
 	
+	//Queries and builds a PlayerSummary object from this friend (will be used to get their avatar, display name, etc)
+	public PlayerSummary getPlayerSummary(){
+		return QueryManager.getPlayerSummary(this.steam64ID);
+	}
 }
