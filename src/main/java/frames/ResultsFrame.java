@@ -1,6 +1,5 @@
 package frames;
 
-import java.awt.EventQueue;
 import java.awt.Font;
 import java.awt.image.BufferedImage;
 
