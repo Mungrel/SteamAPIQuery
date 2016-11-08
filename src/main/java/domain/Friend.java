@@ -15,4 +15,16 @@ public class Friend {
 		this.friendSince = obj.getLong("friend_since");
 	}
 
+	public String getSteam64ID() {
+		return steam64ID;
+	}
+
+	public String getRelationship() {
+		return relationship;
+	}
+
+	public Long getFriendSince() {
+		return friendSince;
+	}
+	
 }
