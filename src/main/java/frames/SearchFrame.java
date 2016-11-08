@@ -26,28 +26,14 @@ public class SearchFrame extends JFrame {
 
 	private JPanel contentPane;
 	private JTextField txtEnterASteam;
-	public static SearchFrame searchFrame = new SearchFrame();
-
-	/**
-	 * Launch the application.
-	 */
-	public static void main(String[] args) {
-		EventQueue.invokeLater(new Runnable() {
-			@Override
-			public void run() {
-				try {
-					searchFrame.setVisible(true);
-				} catch (Exception e) {
-					e.printStackTrace();
-				}
-			}
-		});
+	protected static SearchFrame searchFrame = new SearchFrame();
+	
+	public static void openSearchFrame(){
+		searchFrame.setLocationRelativeTo(null); //centre the frame
+		searchFrame.setVisible(true);
 	}
-
-	/**
-	 * Create the frame.
-	 */
-	public SearchFrame() {
+	
+	private SearchFrame() {
 		setResizable(false);
 		setTitle("SteamQuery - Search");
 		setIconImage(new ImageIcon("src/main/resources/images/share_steam_logo.png").getImage());
