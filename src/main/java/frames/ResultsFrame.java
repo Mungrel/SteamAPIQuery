@@ -23,26 +23,7 @@ public class ResultsFrame extends JFrame {
 	private JLabel lblDisplayname;
 	protected static ResultsFrame resultsFrame = new ResultsFrame();
 
-	/**
-	 * Launch the application.
-	 */
-	public static void main(String[] args) {
-		EventQueue.invokeLater(new Runnable() {
-			@Override
-			public void run() {
-				try {
-					resultsFrame.setVisible(true);
-				} catch (Exception e) {
-					e.printStackTrace();
-				}
-			}
-		});
-	}
-
-	/**
-	 * Create the frame.
-	 */
-	public ResultsFrame() {
+	private ResultsFrame() {
 		setResizable(false);
 		setTitle("SteamQuery - Results");
 		setIconImage(new ImageIcon("src/main/resources/images/share_steam_logo.png").getImage());
