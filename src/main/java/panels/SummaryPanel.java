@@ -6,6 +6,7 @@ import javax.swing.JPanel;
 public class SummaryPanel extends JPanel {
 
 	public SummaryPanel() {
+		setLayout(null);
 
 	}
 

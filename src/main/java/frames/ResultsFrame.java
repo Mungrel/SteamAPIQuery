@@ -42,10 +42,12 @@ public class ResultsFrame extends JFrame {
 
 		JPanel playerSummaryPanel = new SummaryPanel();
 		tabbedPane.addTab("Summary", null, playerSummaryPanel, null);
+		playerSummaryPanel.setLayout(null);
 		tabbedPane.setEnabledAt(0, true);
 
 		JPanel friendsPanel = new FriendsPanel();
 		tabbedPane.addTab("Friends", null, friendsPanel, null);
+		friendsPanel.setLayout(null);
 
 		lblDisplayname = new JLabel("DisplayName");
 		lblDisplayname.setFont(new Font("Segoe UI", Font.PLAIN, 15));
