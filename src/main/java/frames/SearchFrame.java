@@ -24,7 +24,7 @@ import query.QueryManager;
 public class SearchFrame extends JFrame {
 
 	private JPanel contentPane;
-	private JTextField txtEnterASteam;
+	private JTextField searchTextField;
 	protected static SearchFrame searchFrame = new SearchFrame();
 
 	public static void open() {
@@ -43,25 +43,25 @@ public class SearchFrame extends JFrame {
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
 
-		txtEnterASteam = new JTextField();
-		txtEnterASteam.setBounds(10, 15, 368, 34);
-		txtEnterASteam.setForeground(Color.LIGHT_GRAY);
-		txtEnterASteam.setFont(new Font("Segoe UI", Font.PLAIN, 15));
-		txtEnterASteam.setHorizontalAlignment(SwingConstants.CENTER);
-		txtEnterASteam.setText("Enter a Steam64 ID");
-		txtEnterASteam.addKeyListener(new SearchTextKeyListener(txtEnterASteam));
-		txtEnterASteam.setSelectionStart(0);
-		txtEnterASteam.setSelectionEnd(txtEnterASteam.getText().length());
-		contentPane.add(txtEnterASteam);
-		txtEnterASteam.setColumns(10);
+		searchTextField = new JTextField();
+		searchTextField.setBounds(10, 15, 368, 34);
+		searchTextField.setForeground(Color.LIGHT_GRAY);
+		searchTextField.setFont(new Font("Segoe UI", Font.PLAIN, 15));
+		searchTextField.setHorizontalAlignment(SwingConstants.CENTER);
+		searchTextField.setText("Enter a Steam64 ID");
+		searchTextField.addKeyListener(new SearchTextKeyListener(searchTextField));
+		searchTextField.setSelectionStart(0);
+		searchTextField.setSelectionEnd(searchTextField.getText().length());
+		contentPane.add(searchTextField);
+		searchTextField.setColumns(10);
 
-		JButton btnSearch = new JButton("Search");
-		btnSearch.setBounds(144, 74, 99, 29);
-		btnSearch.setBackground(Color.WHITE);
-		btnSearch.addActionListener(new ActionListener() {
+		JButton searchButton = new JButton("Search");
+		searchButton.setBounds(144, 74, 99, 29);
+		searchButton.setBackground(Color.WHITE);
+		searchButton.addActionListener(new ActionListener() {
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				PlayerSummary ps = QueryManager.getPlayerSummary(txtEnterASteam.getText());
+				PlayerSummary ps = QueryManager.getPlayerSummary(searchTextField.getText());
 				BufferedImage playerAvatar = null;
 				try {
 					playerAvatar = ImageManager.getImage(ps.getAvatarImageURL());
@@ -73,8 +73,8 @@ public class SearchFrame extends JFrame {
 				ResultsFrame.resultsFrame.setVisible(true);
 			}
 		});
-		contentPane.add(btnSearch);
+		contentPane.add(searchButton);
 
-		this.getRootPane().setDefaultButton(btnSearch);
+		this.getRootPane().setDefaultButton(searchButton);
 	}
 }

@@ -21,7 +21,7 @@ public class ResultsFrame extends JFrame {
 
 	private JPanel contentPane;
 	private JLabel avatarImageLabel;
-	private JLabel lblDisplayname;
+	private JLabel displayNameLabel;
 	protected static ResultsFrame resultsFrame = new ResultsFrame();
 
 	private ResultsFrame() {
@@ -49,10 +49,10 @@ public class ResultsFrame extends JFrame {
 		tabbedPane.addTab("Friends", null, friendsPanel, null);
 		friendsPanel.setLayout(null);
 
-		lblDisplayname = new JLabel("DisplayName");
-		lblDisplayname.setFont(new Font("Segoe UI", Font.PLAIN, 15));
-		lblDisplayname.setBounds(10, 11, 278, 64);
-		contentPane.add(lblDisplayname);
+		displayNameLabel = new JLabel("DisplayName");
+		displayNameLabel.setFont(new Font("Segoe UI", Font.PLAIN, 15));
+		displayNameLabel.setBounds(10, 11, 278, 64);
+		contentPane.add(displayNameLabel);
 
 		JPanel avatarImagePanel = new JPanel();
 		avatarImagePanel.setBorder(new TitledBorder(null, "", TitledBorder.LEADING, TitledBorder.TOP, null, null));
@@ -74,6 +74,6 @@ public class ResultsFrame extends JFrame {
 			resultsFrame.avatarImageLabel.setText("");
 		}
 		// TODO Set relevant labels with PlayerSummary fields
-		resultsFrame.lblDisplayname.setText(ps.getPersonaName());
+		resultsFrame.displayNameLabel.setText(ps.getPersonaName());
 	}
 }
