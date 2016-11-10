@@ -13,6 +13,8 @@ import javax.swing.border.EmptyBorder;
 import javax.swing.border.TitledBorder;
 
 import domain.PlayerSummary;
+import panels.FriendsPanel;
+import panels.SummaryPanel;
 
 @SuppressWarnings("serial")
 public class ResultsFrame extends JFrame {
@@ -38,11 +40,11 @@ public class ResultsFrame extends JFrame {
 		tabbedPane.setFocusable(false);
 		contentPane.add(tabbedPane);
 
-		JPanel playerSummaryPanel = new JPanel();
+		JPanel playerSummaryPanel = new SummaryPanel();
 		tabbedPane.addTab("Summary", null, playerSummaryPanel, null);
 		tabbedPane.setEnabledAt(0, true);
 
-		JPanel friendsPanel = new JPanel();
+		JPanel friendsPanel = new FriendsPanel();
 		tabbedPane.addTab("Friends", null, friendsPanel, null);
 
 		lblDisplayname = new JLabel("DisplayName");
