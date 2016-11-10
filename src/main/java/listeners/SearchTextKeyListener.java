@@ -38,5 +38,6 @@ public class SearchTextKeyListener implements KeyListener {
 		searchTextField.setText("Enter a Steam64 ID");
 		searchTextField.setForeground(Color.LIGHT_GRAY);
 		searchTextField.setSelectionStart(0);
+		searchTextField.setSelectionEnd(searchTextField.getText().length());
 	}
 }

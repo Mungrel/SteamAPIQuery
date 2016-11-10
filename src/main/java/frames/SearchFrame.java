@@ -49,8 +49,9 @@ public class SearchFrame extends JFrame {
 		txtEnterASteam.setFont(new Font("Segoe UI", Font.PLAIN, 15));
 		txtEnterASteam.setHorizontalAlignment(SwingConstants.CENTER);
 		txtEnterASteam.setText("Enter a Steam64 ID");
-		txtEnterASteam.setSelectionStart(0);
 		txtEnterASteam.addKeyListener(new SearchTextKeyListener(txtEnterASteam));
+		txtEnterASteam.setSelectionStart(0);
+		txtEnterASteam.setSelectionEnd(txtEnterASteam.getText().length());
 		contentPane.add(txtEnterASteam);
 		txtEnterASteam.setColumns(10);
 
