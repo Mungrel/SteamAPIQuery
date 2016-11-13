@@ -38,23 +38,23 @@ public class SummaryPanel extends JPanel {
 		add(lblCountry);
 		
 		JLabel label = new JLabel("");
-		label.setBounds(92, 11, 46, 14);
+		label.setBounds(92, 11, 81, 14);
 		add(label);
 		
 		JLabel label_1 = new JLabel("");
-		label_1.setBounds(92, 36, 46, 14);
+		label_1.setBounds(92, 36, 81, 14);
 		add(label_1);
 		
 		JLabel label_2 = new JLabel("");
-		label_2.setBounds(92, 61, 46, 14);
+		label_2.setBounds(92, 61, 81, 14);
 		add(label_2);
 		
 		JLabel label_3 = new JLabel("");
-		label_3.setBounds(92, 86, 46, 14);
+		label_3.setBounds(92, 86, 81, 14);
 		add(label_3);
 		
 		JLabel label_4 = new JLabel("");
-		label_4.setBounds(92, 111, 46, 14);
+		label_4.setBounds(92, 111, 81, 14);
 		add(label_4);
 
 	}
