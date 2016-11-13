@@ -31,6 +31,7 @@ public class ResultsFrame extends JFrame {
 		setResizable(false);
 		setTitle("SteamQuery - Results");
 		setIconImage(new ImageIcon("src/main/resources/images/share_steam_logo.png").getImage());
+		setLocationRelativeTo(null);
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 438, 433);
 		contentPane = new JPanel();
