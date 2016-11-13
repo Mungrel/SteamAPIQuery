@@ -32,14 +32,14 @@ public class ResultsFrame extends JFrame {
 		setTitle("SteamQuery - Results");
 		setIconImage(new ImageIcon("src/main/resources/images/share_steam_logo.png").getImage());
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setBounds(100, 100, 532, 433);
+		setBounds(100, 100, 438, 433);
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
 
 		JTabbedPane tabbedPane = new JTabbedPane(SwingConstants.TOP);
-		tabbedPane.setBounds(10, 80, 506, 313);
+		tabbedPane.setBounds(10, 80, 412, 313);
 		tabbedPane.setFocusable(false);
 		contentPane.add(tabbedPane);
 
@@ -67,7 +67,7 @@ public class ResultsFrame extends JFrame {
 
 		JPanel avatarImagePanel = new JPanel();
 		avatarImagePanel.setBorder(new TitledBorder(null, "", TitledBorder.LEADING, TitledBorder.TOP, null, null));
-		avatarImagePanel.setBounds(452, 11, 64, 64);
+		avatarImagePanel.setBounds(358, 11, 64, 64);
 		avatarImagePanel.setLayout(null);
 		if (localPlayerAvatarURL != null) {
 			avatarImageLabel.setIcon(ImageManager.createImageIcon(localPlayerAvatarURL));
