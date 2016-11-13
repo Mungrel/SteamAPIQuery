@@ -73,6 +73,7 @@ public class SearchFrame extends JFrame {
 					e1.printStackTrace();
 				}
 				ResultsFrame.open(ps, localPlayerAvatarURL);
+				SearchFrame.close();
 			}
 		});
 		contentPane.add(searchButton);

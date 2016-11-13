@@ -17,6 +17,8 @@ import panels.SummaryPanel;
 import query.ImageManager;
 import javax.swing.JButton;
 import java.awt.Color;
+import java.awt.event.ActionListener;
+import java.awt.event.ActionEvent;
 
 @SuppressWarnings("serial")
 public class ResultsFrame extends JFrame {
@@ -28,6 +30,10 @@ public class ResultsFrame extends JFrame {
 		resultsFrame = new ResultsFrame(ps, localPlayerAvatarURL);
 		resultsFrame.setLocationRelativeTo(null);
 		resultsFrame.setVisible(true);
+	}
+	
+	public static void close(){
+		resultsFrame.setVisible(false);
 	}
 
 	private ResultsFrame(PlayerSummary ps, String localPlayerAvatarURL) {
@@ -82,11 +88,22 @@ public class ResultsFrame extends JFrame {
 		contentPane.add(avatarImagePanel);
 		
 		JButton btnExit = new JButton("Exit");
+		btnExit.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				System.exit(1);
+			}
+		});
 		btnExit.setBackground(Color.WHITE);
 		btnExit.setBounds(333, 370, 89, 23);
 		contentPane.add(btnExit);
 		
 		JButton btnBack = new JButton("Back");
+		btnBack.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				ResultsFrame.close();
+				SearchFrame.open();
+			}
+		});
 		btnBack.setBackground(Color.WHITE);
 		btnBack.setBounds(234, 370, 89, 23);
 		contentPane.add(btnBack);
