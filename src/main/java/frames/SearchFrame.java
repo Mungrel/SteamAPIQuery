@@ -30,6 +30,10 @@ public class SearchFrame extends JFrame {
 		searchFrame.setLocationRelativeTo(null); // centre the frame
 		searchFrame.setVisible(true);
 	}
+	
+	public static void close(){
+		searchFrame.setVisible(false);
+	}
 
 	private SearchFrame() {
 		setResizable(false);
