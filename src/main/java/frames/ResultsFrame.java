@@ -22,9 +22,8 @@ public class ResultsFrame extends JFrame {
 	private JPanel contentPane;
 	private JLabel avatarImageLabel;
 	private JLabel displayNameLabel;
-	protected static ResultsFrame resultsFrame = new ResultsFrame();
 
-	private ResultsFrame() {
+	public ResultsFrame(PlayerSummary ps, BufferedImage playerAvatar) {
 		setResizable(false);
 		setTitle("SteamQuery - Results");
 		setIconImage(new ImageIcon("src/main/resources/images/share_steam_logo.png").getImage());
@@ -41,7 +40,7 @@ public class ResultsFrame extends JFrame {
 		contentPane.add(tabbedPane);
 
 		//TODO pass pulled player summary object
-		JPanel playerSummaryPanel = new SummaryPanel(null);
+		JPanel playerSummaryPanel = new SummaryPanel(ps);
 		tabbedPane.addTab("Summary", null, playerSummaryPanel, null);
 		playerSummaryPanel.setLayout(null);
 		tabbedPane.setEnabledAt(0, true);
@@ -51,9 +50,13 @@ public class ResultsFrame extends JFrame {
 		friendsPanel.setLayout(null);
 
 		displayNameLabel = new JLabel("DisplayName");
+		if (ps != null){
+			displayNameLabel.setText(ps.getPersonaName());
+		}
 		displayNameLabel.setFont(new Font("Segoe UI", Font.PLAIN, 15));
 		displayNameLabel.setBounds(10, 11, 278, 64);
 		contentPane.add(displayNameLabel);
+		
 
 		JPanel avatarImagePanel = new JPanel();
 		avatarImagePanel.setBorder(new TitledBorder(null, "", TitledBorder.LEADING, TitledBorder.TOP, null, null));
@@ -65,16 +68,11 @@ public class ResultsFrame extends JFrame {
 		avatarImageLabel.setFont(new Font("Segoe UI", Font.PLAIN, 11));
 		avatarImageLabel.setHorizontalAlignment(SwingConstants.CENTER);
 		avatarImagePanel.add(avatarImageLabel);
+		if (playerAvatar != null) {
+			avatarImageLabel.setIcon(new ImageIcon(playerAvatar));
+			avatarImageLabel.setText("");
+		}
 
 		contentPane.add(avatarImagePanel);
-	}
-
-	public static void buildResults(PlayerSummary ps, BufferedImage playerAvatar) {
-		if (playerAvatar != null) {
-			resultsFrame.avatarImageLabel.setIcon(new ImageIcon(playerAvatar));
-			resultsFrame.avatarImageLabel.setText("");
-		}
-		// TODO Set relevant labels with PlayerSummary fields
-		resultsFrame.displayNameLabel.setText(ps.getPersonaName());
 	}
 }
