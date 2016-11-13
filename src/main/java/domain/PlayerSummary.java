@@ -92,5 +92,10 @@ public class PlayerSummary {
 	public String getCountry() {
 		return country;
 	}
+	
+	//TODO research and implement conversion
+	private String unixToNormalTime(long unixTime){
+		return null;
+	}
 
 }
