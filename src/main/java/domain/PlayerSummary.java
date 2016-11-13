@@ -1,5 +1,7 @@
 package domain;
 
+import java.util.Date;
+
 import org.json.JSONObject;
 
 public class PlayerSummary {
@@ -48,8 +50,8 @@ public class PlayerSummary {
 		return personaName;
 	}
 
-	public long getLastLogOff() {
-		return lastLogOff;
+	public String getLastLogOff() {
+		return unixToNormalTime(lastLogOff);
 	}
 
 	public String getProfileURL() {
@@ -85,8 +87,8 @@ public class PlayerSummary {
 		return realName;
 	}
 
-	public long getTimeCreated() {
-		return timeCreated;
+	public String getTimeCreated() {
+		return unixToNormalTime(timeCreated);
 	}
 
 	public String getCountry() {
@@ -95,7 +97,8 @@ public class PlayerSummary {
 	
 	//TODO research and implement conversion
 	private String unixToNormalTime(long unixTime){
-		return null;
+		Date date = new Date((long)unixTime*1000);
+		return date.toString();
 	}
 
 }
