@@ -15,6 +15,8 @@ import domain.PlayerSummary;
 import panels.FriendsPanel;
 import panels.SummaryPanel;
 import query.ImageManager;
+import javax.swing.JButton;
+import java.awt.Color;
 
 @SuppressWarnings("serial")
 public class ResultsFrame extends JFrame {
@@ -41,7 +43,7 @@ public class ResultsFrame extends JFrame {
 		contentPane.setLayout(null);
 
 		JTabbedPane tabbedPane = new JTabbedPane(SwingConstants.TOP);
-		tabbedPane.setBounds(10, 80, 412, 313);
+		tabbedPane.setBounds(10, 80, 412, 279);
 		tabbedPane.setFocusable(false);
 		contentPane.add(tabbedPane);
 
@@ -78,6 +80,16 @@ public class ResultsFrame extends JFrame {
 		}
 		avatarImagePanel.add(avatarImageLabel);
 		contentPane.add(avatarImagePanel);
+		
+		JButton btnExit = new JButton("Exit");
+		btnExit.setBackground(Color.WHITE);
+		btnExit.setBounds(333, 370, 89, 23);
+		contentPane.add(btnExit);
+		
+		JButton btnBack = new JButton("Back");
+		btnBack.setBackground(Color.WHITE);
+		btnBack.setBounds(234, 370, 89, 23);
+		contentPane.add(btnBack);
 
 	}
 }
