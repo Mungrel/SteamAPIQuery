@@ -38,7 +38,7 @@ public class SummaryPanel extends JPanel {
 		add(lblCountry);
 		
 		JLabel URLValueLabel = new JLabel(ps.getProfileURL());
-		URLValueLabel.setBounds(92, 11, 81, 14);
+		URLValueLabel.setBounds(92, 11, 289, 14);
 		add(URLValueLabel);
 		
 		JLabel lastOnlineValueLabel = new JLabel(""+ps.getLastLogOff());
