@@ -17,10 +17,10 @@ public class SummaryPanel extends JPanel {
 		lblUrl.setBounds(10, 11, 96, 14);
 		add(lblUrl);
 
-		JLabel lblLastOnline = new JLabel("Last Online");
-		lblLastOnline.setHorizontalAlignment(SwingConstants.TRAILING);
-		lblLastOnline.setBounds(20, 36, 86, 14);
-		add(lblLastOnline);
+		JLabel lblLastLogin = new JLabel("Last Login");
+		lblLastLogin.setHorizontalAlignment(SwingConstants.TRAILING);
+		lblLastLogin.setBounds(20, 36, 86, 14);
+		add(lblLastLogin);
 
 		JLabel lblRealName = new JLabel("Real Name");
 		lblRealName.setHorizontalAlignment(SwingConstants.TRAILING);
@@ -42,7 +42,7 @@ public class SummaryPanel extends JPanel {
 		add(URLValueLabel);
 
 		JLabel lastOnlineValueLabel = new JLabel("" + ps.getLastLogOff());
-		lastOnlineValueLabel.setBounds(116, 36, 81, 14);
+		lastOnlineValueLabel.setBounds(116, 36, 289, 14);
 		add(lastOnlineValueLabel);
 
 		JLabel realNameValueLabel = new JLabel(ps.getRealName());
@@ -50,7 +50,7 @@ public class SummaryPanel extends JPanel {
 		add(realNameValueLabel);
 
 		JLabel memberSinceValueLabel = new JLabel("" + ps.getTimeCreated());
-		memberSinceValueLabel.setBounds(116, 86, 81, 14);
+		memberSinceValueLabel.setBounds(116, 86, 289, 14);
 		add(memberSinceValueLabel);
 
 		JLabel countryValueLabel = new JLabel(ps.getCountry());
