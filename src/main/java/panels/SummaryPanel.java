@@ -37,23 +37,23 @@ public class SummaryPanel extends JPanel {
 		lblCountry.setBounds(10, 111, 72, 14);
 		add(lblCountry);
 		
-		JLabel URLValueLabel = new JLabel("");
+		JLabel URLValueLabel = new JLabel(ps.getProfileURL());
 		URLValueLabel.setBounds(92, 11, 81, 14);
 		add(URLValueLabel);
 		
-		JLabel lastOnlineValueLabel = new JLabel("");
+		JLabel lastOnlineValueLabel = new JLabel(""+ps.getLastLogOff());
 		lastOnlineValueLabel.setBounds(92, 36, 81, 14);
 		add(lastOnlineValueLabel);
 		
-		JLabel realNameValueLabel = new JLabel("");
+		JLabel realNameValueLabel = new JLabel(ps.getRealName());
 		realNameValueLabel.setBounds(92, 61, 81, 14);
 		add(realNameValueLabel);
 		
-		JLabel memberSinceValueLabel = new JLabel("");
+		JLabel memberSinceValueLabel = new JLabel(""+ps.getTimeCreated());
 		memberSinceValueLabel.setBounds(92, 86, 81, 14);
 		add(memberSinceValueLabel);
 		
-		JLabel countryValueLabel = new JLabel("");
+		JLabel countryValueLabel = new JLabel(ps.getCountry());
 		countryValueLabel.setBounds(92, 111, 81, 14);
 		add(countryValueLabel);
 
