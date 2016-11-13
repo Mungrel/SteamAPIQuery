@@ -40,7 +40,8 @@ public class ResultsFrame extends JFrame {
 		tabbedPane.setFocusable(false);
 		contentPane.add(tabbedPane);
 
-		JPanel playerSummaryPanel = new SummaryPanel();
+		//TODO pass pulled player summary object
+		JPanel playerSummaryPanel = new SummaryPanel(null);
 		tabbedPane.addTab("Summary", null, playerSummaryPanel, null);
 		playerSummaryPanel.setLayout(null);
 		tabbedPane.setEnabledAt(0, true);
