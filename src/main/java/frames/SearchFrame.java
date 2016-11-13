@@ -60,6 +60,7 @@ public class SearchFrame extends JFrame {
 
 		JButton searchButton = new JButton("Search");
 		searchButton.setBounds(144, 74, 99, 29);
+		searchButton.setFocusable(false);
 		searchButton.setBackground(Color.WHITE);
 		searchButton.addActionListener(new ActionListener() {
 			@Override

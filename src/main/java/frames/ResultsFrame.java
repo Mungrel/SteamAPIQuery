@@ -93,6 +93,7 @@ public class ResultsFrame extends JFrame {
 				System.exit(1);
 			}
 		});
+		btnExit.setFocusable(false);
 		btnExit.setBackground(Color.WHITE);
 		btnExit.setBounds(333, 370, 89, 23);
 		contentPane.add(btnExit);
@@ -104,6 +105,7 @@ public class ResultsFrame extends JFrame {
 				SearchFrame.open();
 			}
 		});
+		btnBack.setFocusable(false);
 		btnBack.setBackground(Color.WHITE);
 		btnBack.setBounds(234, 370, 89, 23);
 		contentPane.add(btnBack);
