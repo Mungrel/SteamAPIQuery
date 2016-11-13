@@ -94,10 +94,10 @@ public class PlayerSummary {
 	public String getCountry() {
 		return country;
 	}
-	
-	//TODO research and implement conversion
-	private String unixToNormalTime(long unixTime){
-		Date date = new Date((long)unixTime*1000);
+
+	// TODO research and implement conversion
+	private String unixToNormalTime(long unixTime) {
+		Date date = new Date(unixTime * 1000);
 		return date.toString();
 	}
 

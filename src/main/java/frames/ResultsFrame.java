@@ -1,8 +1,12 @@
 package frames;
 
+import java.awt.Color;
 import java.awt.Font;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
 import javax.swing.ImageIcon;
+import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
@@ -15,10 +19,6 @@ import domain.PlayerSummary;
 import panels.FriendsPanel;
 import panels.SummaryPanel;
 import query.ImageManager;
-import javax.swing.JButton;
-import java.awt.Color;
-import java.awt.event.ActionListener;
-import java.awt.event.ActionEvent;
 
 @SuppressWarnings("serial")
 public class ResultsFrame extends JFrame {
@@ -31,8 +31,8 @@ public class ResultsFrame extends JFrame {
 		resultsFrame.setLocationRelativeTo(null);
 		resultsFrame.setVisible(true);
 	}
-	
-	public static void close(){
+
+	public static void close() {
 		resultsFrame.setVisible(false);
 	}
 
@@ -40,7 +40,7 @@ public class ResultsFrame extends JFrame {
 		setResizable(false);
 		setTitle("SteamQuery - Results");
 		setIconImage(new ImageIcon("src/main/resources/images/share_steam_logo.png").getImage());
-		
+
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 438, 433);
 		contentPane = new JPanel();
@@ -64,7 +64,7 @@ public class ResultsFrame extends JFrame {
 
 		JLabel displayNameLabel = new JLabel("DisplayName");
 		if (ps != null) {
-			String labelText = ps.getPersonaName() + " - "+ ps.getPersonaState();
+			String labelText = ps.getPersonaName() + " - " + ps.getPersonaState();
 			displayNameLabel.setText(labelText);
 		}
 		displayNameLabel.setFont(new Font("Segoe UI", Font.PLAIN, 15));
@@ -86,9 +86,10 @@ public class ResultsFrame extends JFrame {
 		}
 		avatarImagePanel.add(avatarImageLabel);
 		contentPane.add(avatarImagePanel);
-		
+
 		JButton btnExit = new JButton("Exit");
 		btnExit.addActionListener(new ActionListener() {
+			@Override
 			public void actionPerformed(ActionEvent e) {
 				System.exit(1);
 			}
@@ -97,9 +98,10 @@ public class ResultsFrame extends JFrame {
 		btnExit.setBackground(Color.WHITE);
 		btnExit.setBounds(333, 370, 89, 23);
 		contentPane.add(btnExit);
-		
+
 		JButton btnBack = new JButton("Back");
 		btnBack.addActionListener(new ActionListener() {
+			@Override
 			public void actionPerformed(ActionEvent e) {
 				ResultsFrame.close();
 				SearchFrame.open();
