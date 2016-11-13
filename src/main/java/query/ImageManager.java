@@ -2,6 +2,7 @@ package query;
 
 import java.io.IOException;
 import java.io.InputStream;
+import java.net.URL;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
@@ -28,9 +29,8 @@ public class ImageManager {
 	}
 
 	public static ImageIcon createImageIcon(String path) {
-		java.net.URL imgURL = ImageManager.class.getResource(path);
-	    if (imgURL != null) {
-	        return new ImageIcon(imgURL);
+	    if (path != null) {
+	        return new ImageIcon(path);
 	    } else {
 	        System.err.println("Couldn't find file: " + path);
 	        return null;

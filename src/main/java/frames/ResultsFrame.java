@@ -21,6 +21,7 @@ public class ResultsFrame extends JFrame {
 
 	private JPanel contentPane;
 	protected static ResultsFrame resultsFrame;
+	private JLabel avatarImageLabel_1;
 	
 	public static void open(PlayerSummary ps, String localPlayerAvatarURL){
 		resultsFrame = new ResultsFrame(ps, localPlayerAvatarURL);
@@ -60,24 +61,21 @@ public class ResultsFrame extends JFrame {
 		displayNameLabel.setBounds(10, 11, 278, 64);
 		contentPane.add(displayNameLabel);
 		
-		JLabel avatarImageLabel = new JLabel("No avatar available");
+		JLabel avatarImageLabel = new JLabel("<html>No Avatar<br>Available</html>", SwingConstants.CENTER);
+		avatarImageLabel.setBounds(0, 0, 64, 64);
+		avatarImageLabel.setFont(new Font("Segoe UI", Font.PLAIN, 11));
+		avatarImageLabel.setHorizontalAlignment(SwingConstants.CENTER);
 		
-
 		JPanel avatarImagePanel = new JPanel();
 		avatarImagePanel.setBorder(new TitledBorder(null, "", TitledBorder.LEADING, TitledBorder.TOP, null, null));
-		avatarImagePanel.setBounds(328, 11, 64, 64);
+		avatarImagePanel.setBounds(452, 11, 64, 64);
 		avatarImagePanel.setLayout(null);
 		if (localPlayerAvatarURL != null) {
 			avatarImageLabel.setIcon(ImageManager.createImageIcon(localPlayerAvatarURL));
 			avatarImageLabel.setText("");
 		}
-
+		avatarImagePanel.add(avatarImageLabel);
 		contentPane.add(avatarImagePanel);
-		
-				avatarImageLabel = new JLabel("<html>No Avatar<br>Available</html>", SwingConstants.CENTER);
-				avatarImageLabel.setBounds(452, 11, 64, 64);
-				contentPane.add(avatarImageLabel);
-				avatarImageLabel.setFont(new Font("Segoe UI", Font.PLAIN, 11));
-				avatarImageLabel.setHorizontalAlignment(SwingConstants.CENTER);
+
 	}
 }
