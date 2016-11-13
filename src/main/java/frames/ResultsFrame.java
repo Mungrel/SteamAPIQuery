@@ -26,6 +26,7 @@ public class ResultsFrame extends JFrame {
 	
 	public static void open(PlayerSummary ps, BufferedImage playerAvatar){
 		resultsFrame = new ResultsFrame(ps, playerAvatar);
+		resultsFrame.setVisible(true);
 	}
 	
 	private ResultsFrame(PlayerSummary ps, BufferedImage playerAvatar) {
