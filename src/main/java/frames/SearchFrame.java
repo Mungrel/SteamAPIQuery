@@ -70,7 +70,7 @@ public class SearchFrame extends JFrame {
 					e1.printStackTrace();
 				}
 				//Variable value not required atm
-				new ResultsFrame(ps, playerAvatar);
+				ResultsFrame.open(ps, playerAvatar);
 				System.out.println("Frame opened");
 			}
 		});

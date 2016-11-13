@@ -22,8 +22,13 @@ public class ResultsFrame extends JFrame {
 	private JPanel contentPane;
 	private JLabel avatarImageLabel;
 	private JLabel displayNameLabel;
-
-	public ResultsFrame(PlayerSummary ps, BufferedImage playerAvatar) {
+	protected static ResultsFrame resultsFrame;
+	
+	public static void open(PlayerSummary ps, BufferedImage playerAvatar){
+		resultsFrame = new ResultsFrame(ps, playerAvatar);
+	}
+	
+	private ResultsFrame(PlayerSummary ps, BufferedImage playerAvatar) {
 		setResizable(false);
 		setTitle("SteamQuery - Results");
 		setIconImage(new ImageIcon("src/main/resources/images/share_steam_logo.png").getImage());
