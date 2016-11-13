@@ -71,6 +71,7 @@ public class SearchFrame extends JFrame {
 				}
 				//Variable value not required atm
 				new ResultsFrame(ps, playerAvatar);
+				System.out.println("Frame opened");
 			}
 		});
 		contentPane.add(searchButton);
