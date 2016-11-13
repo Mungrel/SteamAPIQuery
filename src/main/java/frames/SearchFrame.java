@@ -4,7 +4,6 @@ import java.awt.Color;
 import java.awt.Font;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.awt.image.BufferedImage;
 import java.io.IOException;
 
 import javax.swing.ImageIcon;
@@ -62,15 +61,15 @@ public class SearchFrame extends JFrame {
 			@Override
 			public void actionPerformed(ActionEvent e) {
 				PlayerSummary ps = QueryManager.getPlayerSummary(searchTextField.getText());
-				BufferedImage playerAvatar = null;
+				String localPlayerAvatarURL = null;
 				try {
-					playerAvatar = ImageManager.getImage(ps.getAvatarImageURL());
+					localPlayerAvatarURL = ImageManager.getImage(ps.getAvatarImageURL());
 				} catch (IOException e1) {
 					System.out.println("Failed to load avatar image");
 					e1.printStackTrace();
 				}
 				//Variable value not required atm
-				ResultsFrame.open(ps, playerAvatar);
+				ResultsFrame.open(ps, localPlayerAvatarURL);
 				System.out.println("Frame opened");
 			}
 		});
