@@ -21,13 +21,12 @@ public class ResultsFrame extends JFrame {
 
 	private JPanel contentPane;
 	protected static ResultsFrame resultsFrame;
-	private JLabel avatarImageLabel_1;
-	
-	public static void open(PlayerSummary ps, String localPlayerAvatarURL){
+
+	public static void open(PlayerSummary ps, String localPlayerAvatarURL) {
 		resultsFrame = new ResultsFrame(ps, localPlayerAvatarURL);
 		resultsFrame.setVisible(true);
 	}
-	
+
 	private ResultsFrame(PlayerSummary ps, String localPlayerAvatarURL) {
 		setResizable(false);
 		setTitle("SteamQuery - Results");
@@ -54,18 +53,18 @@ public class ResultsFrame extends JFrame {
 		friendsPanel.setLayout(null);
 
 		JLabel displayNameLabel = new JLabel("DisplayName");
-		if (ps != null){
+		if (ps != null) {
 			displayNameLabel.setText(ps.getPersonaName());
 		}
 		displayNameLabel.setFont(new Font("Segoe UI", Font.PLAIN, 15));
 		displayNameLabel.setBounds(10, 11, 278, 64);
 		contentPane.add(displayNameLabel);
-		
+
 		JLabel avatarImageLabel = new JLabel("<html>No Avatar<br>Available</html>", SwingConstants.CENTER);
 		avatarImageLabel.setBounds(0, 0, 64, 64);
 		avatarImageLabel.setFont(new Font("Segoe UI", Font.PLAIN, 11));
 		avatarImageLabel.setHorizontalAlignment(SwingConstants.CENTER);
-		
+
 		JPanel avatarImagePanel = new JPanel();
 		avatarImagePanel.setBorder(new TitledBorder(null, "", TitledBorder.LEADING, TitledBorder.TOP, null, null));
 		avatarImagePanel.setBounds(452, 11, 64, 64);

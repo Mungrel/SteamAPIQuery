@@ -61,7 +61,7 @@ public class PlayerSummary {
 	}
 
 	public String getPersonaState() {
-		switch(personaState){
+		switch (personaState) {
 		case 0:
 			return "Offline";
 		case 1:
@@ -74,7 +74,7 @@ public class PlayerSummary {
 			return "Snooze";
 		case 5:
 			return "Looking to trade";
-		case 6: 
+		case 6:
 			return "Looking to play";
 		default:
 			return "Offline";

@@ -68,7 +68,7 @@ public class SearchFrame extends JFrame {
 					System.out.println("Failed to load avatar image");
 					e1.printStackTrace();
 				}
-				//Variable value not required atm
+				// Variable value not required atm
 				ResultsFrame.open(ps, localPlayerAvatarURL);
 				System.out.println("Frame opened");
 			}
