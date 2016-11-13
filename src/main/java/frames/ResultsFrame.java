@@ -54,10 +54,11 @@ public class ResultsFrame extends JFrame {
 
 		JLabel displayNameLabel = new JLabel("DisplayName");
 		if (ps != null) {
-			displayNameLabel.setText(ps.getPersonaName());
+			String labelText = ps.getPersonaName() + " - "+ ps.getPersonaState();
+			displayNameLabel.setText(labelText);
 		}
 		displayNameLabel.setFont(new Font("Segoe UI", Font.PLAIN, 15));
-		displayNameLabel.setBounds(10, 11, 278, 64);
+		displayNameLabel.setBounds(10, 11, 338, 64);
 		contentPane.add(displayNameLabel);
 
 		JLabel avatarImageLabel = new JLabel("<html>No Avatar<br>Available</html>", SwingConstants.CENTER);
