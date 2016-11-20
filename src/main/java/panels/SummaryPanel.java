@@ -5,6 +5,7 @@ import javax.swing.JPanel;
 import javax.swing.SwingConstants;
 
 import domain.PlayerSummary;
+import listeners.URLMouseListener;
 
 @SuppressWarnings("serial")
 public class SummaryPanel extends JPanel {
@@ -39,6 +40,7 @@ public class SummaryPanel extends JPanel {
 
 		JLabel URLValueLabel = new JLabel(ps.getProfileURL());
 		URLValueLabel.setBounds(116, 11, 289, 14);
+		URLValueLabel.addMouseListener(new URLMouseListener());
 		add(URLValueLabel);
 
 		JLabel lastOnlineValueLabel = new JLabel("" + ps.getLastLogOff());
