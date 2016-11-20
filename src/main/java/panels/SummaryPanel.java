@@ -40,7 +40,7 @@ public class SummaryPanel extends JPanel {
 
 		JLabel URLValueLabel = new JLabel(ps.getProfileURL());
 		URLValueLabel.setBounds(116, 11, 289, 14);
-		URLValueLabel.addMouseListener(new URLMouseListener());
+		URLValueLabel.addMouseListener(new URLMouseListener(ps.getProfileURL()));
 		add(URLValueLabel);
 
 		JLabel lastOnlineValueLabel = new JLabel("" + ps.getLastLogOff());
