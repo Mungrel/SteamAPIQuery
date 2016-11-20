@@ -8,20 +8,19 @@ import java.net.URI;
 import java.net.URISyntaxException;
 
 public class URLMouseListener implements MouseListener {
-	
+
 	private URI destination;
-	
-	public URLMouseListener(String uri){
+
+	public URLMouseListener(String uri) {
 		try {
 			this.destination = new URI(uri);
 		} catch (URISyntaxException e) {
-			System.out.println("Invalid URI: "+uri);
+			System.out.println("Invalid URI: " + uri);
 		}
 	}
 
 	@Override
 	public void mouseClicked(MouseEvent e) {
-		// TODO Auto-generated method stub
 		Desktop desktop = Desktop.getDesktop();
 		try {
 			desktop.browse(this.destination);
@@ -32,26 +31,18 @@ public class URLMouseListener implements MouseListener {
 
 	@Override
 	public void mousePressed(MouseEvent e) {
-		// TODO Auto-generated method stub
-
 	}
 
 	@Override
 	public void mouseReleased(MouseEvent e) {
-		// TODO Auto-generated method stub
-
 	}
 
 	@Override
 	public void mouseEntered(MouseEvent e) {
-		// TODO Auto-generated method stub
-
 	}
 
 	@Override
 	public void mouseExited(MouseEvent e) {
-		// TODO Auto-generated method stub
-
 	}
 
 }
