@@ -1,5 +1,8 @@
 package panels;
 
+import java.awt.Color;
+import java.awt.Cursor;
+
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.SwingConstants;
@@ -38,8 +41,10 @@ public class SummaryPanel extends JPanel {
 		lblCountry.setBounds(20, 111, 86, 14);
 		add(lblCountry);
 
-		JLabel URLValueLabel = new JLabel(ps.getProfileURL());
+		JLabel URLValueLabel = new JLabel("<HTML><U>"+ps.getProfileURL()+"</U></HTML>");
+		URLValueLabel.setForeground(Color.BLUE);
 		URLValueLabel.setBounds(116, 11, 289, 14);
+		URLValueLabel.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
 		URLValueLabel.addMouseListener(new URLMouseListener(ps.getProfileURL()));
 		add(URLValueLabel);
 
