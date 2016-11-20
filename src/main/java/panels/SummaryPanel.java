@@ -41,7 +41,7 @@ public class SummaryPanel extends JPanel {
 		lblCountry.setBounds(20, 111, 86, 14);
 		add(lblCountry);
 
-		JLabel URLValueLabel = new JLabel("<HTML><U>"+ps.getProfileURL()+"</U></HTML>");
+		JLabel URLValueLabel = new JLabel("<HTML><U>" + ps.getProfileURL() + "</U></HTML>");
 		URLValueLabel.setForeground(Color.BLUE);
 		URLValueLabel.setBounds(116, 11, 289, 14);
 		URLValueLabel.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
