@@ -82,6 +82,11 @@ public class SearchFrame extends JFrame {
 		this.getRootPane().setDefaultButton(searchButton);
 		
 		JButton btnOptions = new JButton("...");
+		btnOptions.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				OptionsFrame.open();
+			}
+		});
 		btnOptions.setBackground(Color.WHITE);
 		btnOptions.setBounds(348, 82, 30, 25);
 		btnOptions.setFocusable(false);

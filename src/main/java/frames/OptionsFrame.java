@@ -34,7 +34,6 @@ public class OptionsFrame extends JFrame {
 	
 	public OptionsFrame() {
 		setTitle("SteamQuery - Options");
-		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 360, 294);
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
@@ -46,6 +45,7 @@ public class OptionsFrame extends JFrame {
 		contentPane.add(lblImageCache);
 		
 		JCheckBox chckbxClearOnStartup = new JCheckBox("Clear on startup");
+		chckbxClearOnStartup.setFocusable(false);
 		chckbxClearOnStartup.setBounds(20, 32, 120, 23);
 		contentPane.add(chckbxClearOnStartup);
 		
