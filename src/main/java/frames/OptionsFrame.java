@@ -72,6 +72,11 @@ public class OptionsFrame extends JFrame {
 		contentPane.add(btnCancel);
 		
 		JButton btnOk = new JButton("OK");
+		btnOk.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				//TODO Persist options
+			}
+		});
 		btnOk.setFocusable(false);
 		btnOk.setBackground(Color.WHITE);
 		btnOk.setBounds(148, 221, 89, 23);
