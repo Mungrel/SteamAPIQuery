@@ -1,7 +1,6 @@
 package frames;
 
 import java.awt.Color;
-import java.awt.EventQueue;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
@@ -12,6 +11,7 @@ import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 
+@SuppressWarnings("serial")
 public class OptionsFrame extends JFrame {
 
 	private static OptionsFrame optionsFrame;
@@ -26,26 +26,6 @@ public class OptionsFrame extends JFrame {
 		optionsFrame.setVisible(true);
 	}
 	
-	
-	/**
-	 * Launch the application.
-	 */
-	public static void main(String[] args) {
-		EventQueue.invokeLater(new Runnable() {
-			public void run() {
-				try {
-					OptionsFrame frame = new OptionsFrame();
-					frame.setVisible(true);
-				} catch (Exception e) {
-					e.printStackTrace();
-				}
-			}
-		});
-	}
-
-	/**
-	 * Create the frame.
-	 */
 	public OptionsFrame() {
 		setTitle("SteamQuery - Options");
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
