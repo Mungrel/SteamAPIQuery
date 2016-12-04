@@ -28,6 +28,10 @@ public class OptionsFrame extends JFrame {
 		optionsFrame.setVisible(true);
 	}
 	
+	public static void close(){
+		optionsFrame.setVisible(false);
+	}
+	
 	public OptionsFrame() {
 		setTitle("SteamQuery - Options");
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -59,6 +63,7 @@ public class OptionsFrame extends JFrame {
 		JButton btnCancel = new JButton("Cancel");
 		btnCancel.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
+				OptionsFrame.close();
 			}
 		});
 		btnCancel.setFocusable(false);
