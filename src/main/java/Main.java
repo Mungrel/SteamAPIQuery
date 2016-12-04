@@ -1,7 +1,7 @@
 import java.io.File;
 
 import frames.SearchFrame;
-import query.ImageManager;
+import utils.FileManager;
 
 public class Main {
 
@@ -11,7 +11,7 @@ public class Main {
 	}
 
 	private static void checkAndBuildTmpDir() {
-		File file = new File(ImageManager.getTmpImgDir());
+		File file = new File(FileManager.getTmpDir());
 		if (!file.exists()) {
 			file.mkdirs();
 		}

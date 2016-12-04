@@ -1,6 +1,5 @@
-package query;
+package utils;
 
-import java.io.File;
 import java.io.IOException;
 import java.io.InputStream;
 import java.nio.file.Files;
@@ -15,15 +14,13 @@ import javax.ws.rs.core.Response;
 
 public class ImageManager {
 
-	private static String TMP_IMG_DIR = "tmp";
-
 	public static String getImage(String externalURL, String fileName) throws IOException {
 		if (!fileName.endsWith(".png")) {
 			fileName += ".png";
 		}
 		// Check if file already exists in tmp dir, return it if true
-		Path path = Paths.get(TMP_IMG_DIR, fileName);
-		if (fileExists(path.toString())) {
+		Path path = Paths.get(FileManager.getTmpDir(), fileName);
+		if (FileManager.fileExists(path.toString())) {
 			return path.toString();
 		} else { // Doesn't exist, wget it
 			Client client = ClientBuilder.newClient();
@@ -42,23 +39,6 @@ public class ImageManager {
 			return new ImageIcon(path);
 		} else {
 			return null;
-		}
-	}
-
-	public static String getTmpImgDir() {
-		return TMP_IMG_DIR;
-	}
-
-	private static boolean fileExists(String fullPath) {
-		File file = new File(fullPath);
-		return file.exists();
-	}
-
-	public static void emptyTmpDir() {
-		File tmpDir = new File(TMP_IMG_DIR);
-		File[] imgs = tmpDir.listFiles();
-		for (File f : imgs) {
-			f.delete();
 		}
 	}
 }

@@ -16,8 +16,8 @@ import javax.swing.border.EmptyBorder;
 
 import domain.PlayerSummary;
 import listeners.SearchTextKeyListener;
-import query.ImageManager;
 import query.QueryManager;
+import utils.ImageManager;
 
 @SuppressWarnings("serial")
 public class SearchFrame extends JFrame {

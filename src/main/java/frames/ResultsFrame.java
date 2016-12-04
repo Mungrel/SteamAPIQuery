@@ -18,7 +18,7 @@ import javax.swing.border.TitledBorder;
 import domain.PlayerSummary;
 import panels.FriendsPanel;
 import panels.SummaryPanel;
-import query.ImageManager;
+import utils.ImageManager;
 
 @SuppressWarnings("serial")
 public class ResultsFrame extends JFrame {

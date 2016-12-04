@@ -11,7 +11,7 @@ import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 
-import query.ImageManager;
+import utils.FileManager;
 
 @SuppressWarnings("serial")
 public class OptionsFrame extends JFrame {
@@ -53,7 +53,7 @@ public class OptionsFrame extends JFrame {
 		btnClearNow.addActionListener(new ActionListener() {
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				ImageManager.emptyTmpDir();
+				FileManager.emptyTmpDir();
 			}
 		});
 		btnClearNow.setFocusable(false);
