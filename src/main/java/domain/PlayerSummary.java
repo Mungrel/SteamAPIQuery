@@ -1,5 +1,6 @@
 package domain;
 
+import java.text.SimpleDateFormat;
 import java.util.Date;
 
 import org.json.JSONObject;
@@ -98,7 +99,8 @@ public class PlayerSummary {
 	// TODO research and implement conversion
 	private String unixToNormalTime(long unixTime) {
 		Date date = new Date(unixTime * 1000);
-		return date.toString();
+		SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy - hh:mm:ss a");
+		return sdf.format(date);
 	}
 
 }
