@@ -1,5 +1,6 @@
 package query;
 
+import java.io.File;
 import java.io.IOException;
 import java.io.InputStream;
 import java.nio.file.Files;
@@ -20,13 +21,19 @@ public class ImageManager {
 		if (!fileName.endsWith(".png")){
 			fileName += ".png";
 		}
-		Client client = ClientBuilder.newClient();
-		Response response = client.target(externalURL).request().get();
-		InputStream in = response.readEntity(InputStream.class);
+		//Check if file already exists in tmp dir, return it if true
 		Path path = Paths.get(TMP_IMG_DIR, fileName);
-		Files.copy(in, path, StandardCopyOption.REPLACE_EXISTING);
-		response.close();
-		in.close();
+		if (fileExists(path.toString())){
+			return path.toString();
+		} else { //Doesn't exist, wget it
+			Client client = ClientBuilder.newClient();
+			Response response = client.target(externalURL).request().get();
+			InputStream in = response.readEntity(InputStream.class);
+			
+			Files.copy(in, path, StandardCopyOption.REPLACE_EXISTING);
+			response.close();
+			in.close();
+		}
 		return path.toString();
 	}
 
@@ -40,5 +47,10 @@ public class ImageManager {
 	
 	public static String getTmpImgDir(){
 		return TMP_IMG_DIR;
+	}
+	
+	private static boolean fileExists(String fullPath){
+		File file = new File(fullPath);
+		return file.exists();
 	}
 }

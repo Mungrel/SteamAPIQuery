@@ -68,7 +68,7 @@ public class SearchFrame extends JFrame {
 				PlayerSummary ps = QueryManager.getPlayerSummary(searchTextField.getText());
 				String localPlayerAvatarURL = null;
 				try {
-					localPlayerAvatarURL = ImageManager.getImage(ps.getAvatarImageURL(), "playerAvatar");
+					localPlayerAvatarURL = ImageManager.getImage(ps.getAvatarImageURL(), ps.getSteamID());
 				} catch (IOException e1) {
 					System.out.println("Failed to load avatar image");
 					e1.printStackTrace();
