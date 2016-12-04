@@ -80,9 +80,10 @@ public class SearchFrame extends JFrame {
 		contentPane.add(searchButton);
 
 		this.getRootPane().setDefaultButton(searchButton);
-		
+
 		JButton btnOptions = new JButton("...");
 		btnOptions.addActionListener(new ActionListener() {
+			@Override
 			public void actionPerformed(ActionEvent e) {
 				OptionsFrame.open();
 			}

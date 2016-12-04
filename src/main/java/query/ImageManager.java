@@ -18,18 +18,18 @@ public class ImageManager {
 	private static String TMP_IMG_DIR = "tmp";
 
 	public static String getImage(String externalURL, String fileName) throws IOException {
-		if (!fileName.endsWith(".png")){
+		if (!fileName.endsWith(".png")) {
 			fileName += ".png";
 		}
-		//Check if file already exists in tmp dir, return it if true
+		// Check if file already exists in tmp dir, return it if true
 		Path path = Paths.get(TMP_IMG_DIR, fileName);
-		if (fileExists(path.toString())){
+		if (fileExists(path.toString())) {
 			return path.toString();
-		} else { //Doesn't exist, wget it
+		} else { // Doesn't exist, wget it
 			Client client = ClientBuilder.newClient();
 			Response response = client.target(externalURL).request().get();
 			InputStream in = response.readEntity(InputStream.class);
-			
+
 			Files.copy(in, path, StandardCopyOption.REPLACE_EXISTING);
 			response.close();
 			in.close();
@@ -44,20 +44,20 @@ public class ImageManager {
 			return null;
 		}
 	}
-	
-	public static String getTmpImgDir(){
+
+	public static String getTmpImgDir() {
 		return TMP_IMG_DIR;
 	}
-	
-	private static boolean fileExists(String fullPath){
+
+	private static boolean fileExists(String fullPath) {
 		File file = new File(fullPath);
 		return file.exists();
 	}
-	
-	public static void emptyTmpDir(){
+
+	public static void emptyTmpDir() {
 		File tmpDir = new File(TMP_IMG_DIR);
 		File[] imgs = tmpDir.listFiles();
-		for (File f : imgs){
+		for (File f : imgs) {
 			f.delete();
 		}
 	}

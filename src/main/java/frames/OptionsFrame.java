@@ -17,21 +17,21 @@ import query.ImageManager;
 public class OptionsFrame extends JFrame {
 
 	private static OptionsFrame optionsFrame;
-	
+
 	private JPanel contentPane;
 
-	public static void open(){
-		if (optionsFrame == null){
+	public static void open() {
+		if (optionsFrame == null) {
 			optionsFrame = new OptionsFrame();
 		}
 		optionsFrame.setLocationRelativeTo(null);
 		optionsFrame.setVisible(true);
 	}
-	
-	public static void close(){
+
+	public static void close() {
 		optionsFrame.setVisible(false);
 	}
-	
+
 	public OptionsFrame() {
 		setTitle("SteamQuery - Options");
 		setBounds(100, 100, 360, 294);
@@ -39,18 +39,19 @@ public class OptionsFrame extends JFrame {
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
-		
+
 		JLabel lblImageCache = new JLabel("Image Cache");
 		lblImageCache.setBounds(10, 11, 83, 14);
 		contentPane.add(lblImageCache);
-		
+
 		JCheckBox chckbxClearOnStartup = new JCheckBox("Clear on startup");
 		chckbxClearOnStartup.setFocusable(false);
 		chckbxClearOnStartup.setBounds(20, 32, 120, 23);
 		contentPane.add(chckbxClearOnStartup);
-		
+
 		JButton btnClearNow = new JButton("Clear now");
 		btnClearNow.addActionListener(new ActionListener() {
+			@Override
 			public void actionPerformed(ActionEvent e) {
 				ImageManager.emptyTmpDir();
 			}
@@ -59,9 +60,10 @@ public class OptionsFrame extends JFrame {
 		btnClearNow.setBackground(Color.WHITE);
 		btnClearNow.setBounds(220, 32, 114, 23);
 		contentPane.add(btnClearNow);
-		
+
 		JButton btnCancel = new JButton("Cancel");
 		btnCancel.addActionListener(new ActionListener() {
+			@Override
 			public void actionPerformed(ActionEvent e) {
 				OptionsFrame.close();
 			}
@@ -70,11 +72,12 @@ public class OptionsFrame extends JFrame {
 		btnCancel.setBackground(Color.WHITE);
 		btnCancel.setBounds(245, 221, 89, 23);
 		contentPane.add(btnCancel);
-		
+
 		JButton btnOk = new JButton("OK");
 		btnOk.addActionListener(new ActionListener() {
+			@Override
 			public void actionPerformed(ActionEvent e) {
-				//TODO Persist options
+				// TODO Persist options
 			}
 		});
 		btnOk.setFocusable(false);

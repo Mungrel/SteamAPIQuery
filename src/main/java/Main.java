@@ -9,10 +9,10 @@ public class Main {
 		checkAndBuildTmpDir();
 		SearchFrame.open();
 	}
-	
-	private static void checkAndBuildTmpDir(){
+
+	private static void checkAndBuildTmpDir() {
 		File file = new File(ImageManager.getTmpImgDir());
-		if (!file.exists()){
+		if (!file.exists()) {
 			file.mkdirs();
 		}
 	}
