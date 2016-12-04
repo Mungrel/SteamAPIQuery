@@ -16,11 +16,14 @@ public class ImageManager {
 
 	private static String TMP_IMG_DIR = "tmp";
 
-	public static String getImage(String externalURL) throws IOException {
+	public static String getImage(String externalURL, String fileName) throws IOException {
+		if (!fileName.endsWith(".png")){
+			fileName += ".png";
+		}
 		Client client = ClientBuilder.newClient();
 		Response response = client.target(externalURL).request().get();
 		InputStream in = response.readEntity(InputStream.class);
-		Path path = Paths.get(TMP_IMG_DIR, "playerAvatar.png");
+		Path path = Paths.get(TMP_IMG_DIR, fileName);
 		Files.copy(in, path, StandardCopyOption.REPLACE_EXISTING);
 		response.close();
 		in.close();
