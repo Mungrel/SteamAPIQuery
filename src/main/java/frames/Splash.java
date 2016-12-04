@@ -15,18 +15,18 @@ public class Splash extends JFrame {
 
 	private JPanel contentPane;
 	private static Splash splash;
-	
-	public static void open(){
-		if (splash == null){
+
+	public static void open() {
+		if (splash == null) {
 			splash = new Splash();
 		}
 		splash.setUndecorated(true);
-		splash.setBackground(new Color(0, 255, 0 ,0));
+		splash.setBackground(new Color(0, 255, 0, 0));
 		splash.setLocationRelativeTo(null);
 		splash.setVisible(true);
 	}
-	
-	public static void close(){
+
+	public static void close() {
 		splash.setVisible(false);
 	}
 
@@ -37,7 +37,7 @@ public class Splash extends JFrame {
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		contentPane.setLayout(new BorderLayout(0, 0));
 		setContentPane(contentPane);
-		JLabel label = new JLabel("",new ImageIcon("src/main/resources/images/SteamLogo.png"), SwingConstants.CENTER);
+		JLabel label = new JLabel("", new ImageIcon("src/main/resources/images/SteamLogo.png"), SwingConstants.CENTER);
 		contentPane.add(label, BorderLayout.CENTER);
 	}
 

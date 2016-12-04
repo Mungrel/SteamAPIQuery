@@ -5,7 +5,6 @@ import java.io.File;
 public class FileManager {
 
 	private static String TMP_DIR = "tmp";
-	
 
 	public static void emptyTmpDir() {
 		File tmpDir = new File(TMP_DIR);
@@ -23,5 +22,5 @@ public class FileManager {
 	public static String getTmpDir() {
 		return TMP_DIR;
 	}
-	
+
 }
