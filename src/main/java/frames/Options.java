@@ -37,7 +37,7 @@ public class Options extends JFrame {
 	public Options() {
 		setTitle("SteamQuery - Options");
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setBounds(100, 100, 263, 294);
+		setBounds(100, 100, 360, 294);
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);
@@ -52,8 +52,21 @@ public class Options extends JFrame {
 		contentPane.add(chckbxClearOnStartup);
 		
 		JButton btnClearNow = new JButton("Clear now");
+		btnClearNow.setFocusable(false);
 		btnClearNow.setBackground(Color.WHITE);
-		btnClearNow.setBounds(148, 32, 89, 23);
+		btnClearNow.setBounds(220, 32, 114, 23);
 		contentPane.add(btnClearNow);
+		
+		JButton btnCancel = new JButton("Cancel");
+		btnCancel.setFocusable(false);
+		btnCancel.setBackground(Color.WHITE);
+		btnCancel.setBounds(245, 221, 89, 23);
+		contentPane.add(btnCancel);
+		
+		JButton btnOk = new JButton("OK");
+		btnOk.setFocusable(false);
+		btnOk.setBackground(Color.WHITE);
+		btnOk.setBounds(148, 221, 89, 23);
+		contentPane.add(btnOk);
 	}
 }
