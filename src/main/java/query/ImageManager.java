@@ -53,4 +53,12 @@ public class ImageManager {
 		File file = new File(fullPath);
 		return file.exists();
 	}
+	
+	private static void emptyTmpDir(){
+		File tmpDir = new File(TMP_IMG_DIR);
+		File[] imgs = tmpDir.listFiles();
+		for (File f : imgs){
+			f.delete();
+		}
+	}
 }
