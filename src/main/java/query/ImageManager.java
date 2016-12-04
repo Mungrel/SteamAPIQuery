@@ -14,13 +14,13 @@ import javax.ws.rs.core.Response;
 
 public class ImageManager {
 
-	private static String TMP_IMG_DIR = "C:\\Users\\Nick\\Desktop";
+	private static String TMP_IMG_DIR = "tmp";
 
 	public static String getImage(String externalURL) throws IOException {
 		Client client = ClientBuilder.newClient();
 		Response response = client.target(externalURL).request().get();
 		InputStream in = response.readEntity(InputStream.class);
-		Path path = Paths.get(TMP_IMG_DIR, "avatar.png");
+		Path path = Paths.get(TMP_IMG_DIR, "playerAvatar.png");
 		Files.copy(in, path, StandardCopyOption.REPLACE_EXISTING);
 		response.close();
 		in.close();
@@ -33,5 +33,9 @@ public class ImageManager {
 		} else {
 			return null;
 		}
+	}
+	
+	public static String getTmpImgDir(){
+		return TMP_IMG_DIR;
 	}
 }
