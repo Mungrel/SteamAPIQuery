@@ -1,10 +1,8 @@
 package domain;
 
-import java.text.DateFormat;
-import java.text.SimpleDateFormat;
-import java.util.Date;
-
 import org.json.JSONObject;
+
+import utils.Time;
 
 public class PlayerSummary {
 
@@ -53,7 +51,7 @@ public class PlayerSummary {
 	}
 
 	public String getLastLogOff() {
-		return unixToNormalTime(lastLogOff);
+		return Time.unixToNormalTime(lastLogOff);
 	}
 
 	public String getProfileURL() {
@@ -90,17 +88,13 @@ public class PlayerSummary {
 	}
 
 	public String getTimeCreated() {
-		return unixToNormalTime(timeCreated);
+		return Time.unixToNormalTime(timeCreated);
 	}
 
 	public String getCountry() {
 		return country;
 	}
 
-	private String unixToNormalTime(long unixTime) {
-		Date date = new Date(unixTime * 1000);
-		DateFormat sdf = new SimpleDateFormat("dd/MM/yyyy - hh:mm:ss a");
-		return sdf.format(date);
-	}
+	
 
 }
