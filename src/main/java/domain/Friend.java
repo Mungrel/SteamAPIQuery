@@ -3,6 +3,7 @@ package domain;
 import org.json.JSONObject;
 
 import query.QueryManager;
+import utils.Time;
 
 public class Friend {
 
@@ -25,8 +26,8 @@ public class Friend {
 		return relationship;
 	}
 
-	public Long getFriendSince() {
-		return friendSince;
+	public String getFriendSince() {
+		return Time.unixToNormalTime(friendSince);
 	}
 
 	// Queries and builds a PlayerSummary object from this friend (will be used
