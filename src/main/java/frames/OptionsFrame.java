@@ -11,6 +11,8 @@ import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 
+import query.ImageManager;
+
 @SuppressWarnings("serial")
 public class OptionsFrame extends JFrame {
 
@@ -44,6 +46,11 @@ public class OptionsFrame extends JFrame {
 		contentPane.add(chckbxClearOnStartup);
 		
 		JButton btnClearNow = new JButton("Clear now");
+		btnClearNow.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				ImageManager.emptyTmpDir();
+			}
+		});
 		btnClearNow.setFocusable(false);
 		btnClearNow.setBackground(Color.WHITE);
 		btnClearNow.setBounds(220, 32, 114, 23);
