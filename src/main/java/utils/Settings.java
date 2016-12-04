@@ -4,6 +4,7 @@ import java.nio.file.Paths;
 import java.util.HashMap;
 import java.util.Map;
 
+@SuppressWarnings("unused")
 public class Settings {
 	
 	private String configFilePath; 
