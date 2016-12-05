@@ -6,7 +6,6 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.io.IOException;
 
-import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
@@ -38,7 +37,7 @@ public class SearchFrame extends JFrame {
 	private SearchFrame() {
 		setResizable(false);
 		setTitle("SteamQuery - Search");
-		setIconImage(new ImageIcon("src/main/resources/images/SteamLogo.png").getImage());
+		setIconImages(ImageManager.getSteamQueryLogoImgs());
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 394, 147);
 		contentPane = new JPanel();

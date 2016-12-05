@@ -11,6 +11,7 @@ import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 
 import utils.FileManager;
+import utils.ImageManager;
 
 @SuppressWarnings("serial")
 public class OptionsFrame extends JFrame {
@@ -34,6 +35,7 @@ public class OptionsFrame extends JFrame {
 	public OptionsFrame() {
 		setTitle("SteamQuery - Options");
 		setBounds(100, 100, 360, 294);
+		setIconImages(ImageManager.getSteamQueryLogoImgs());
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);
