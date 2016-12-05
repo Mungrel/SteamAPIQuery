@@ -5,7 +5,6 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 import javax.swing.JButton;
-import javax.swing.JCheckBox;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
@@ -44,11 +43,6 @@ public class OptionsFrame extends JFrame {
 		lblImageCache.setBounds(10, 11, 83, 14);
 		contentPane.add(lblImageCache);
 
-		JCheckBox chckbxClearOnStartup = new JCheckBox("Clear on startup");
-		chckbxClearOnStartup.setFocusable(false);
-		chckbxClearOnStartup.setBounds(20, 32, 120, 23);
-		contentPane.add(chckbxClearOnStartup);
-
 		JButton btnClearNow = new JButton("Clear now");
 		btnClearNow.addActionListener(new ActionListener() {
 			@Override
@@ -58,7 +52,7 @@ public class OptionsFrame extends JFrame {
 		});
 		btnClearNow.setFocusable(false);
 		btnClearNow.setBackground(Color.WHITE);
-		btnClearNow.setBounds(220, 32, 114, 23);
+		btnClearNow.setBounds(20, 36, 114, 23);
 		contentPane.add(btnClearNow);
 
 		JButton btnCancel = new JButton("Cancel");
