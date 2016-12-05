@@ -23,4 +23,11 @@ public class FileManager {
 		return TMP_DIR;
 	}
 
+	public static void checkAndBuildTmpDir() {
+		File file = new File(getTmpDir());
+		if (!file.exists()) {
+			file.mkdirs();
+		}
+	}
+
 }
