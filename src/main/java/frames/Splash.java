@@ -10,14 +10,16 @@ import javax.swing.JPanel;
 import javax.swing.SwingConstants;
 import javax.swing.border.EmptyBorder;
 
+import utils.ImageManager;
+
 @SuppressWarnings("serial")
 public class Splash extends JFrame {
 
 	private JPanel contentPane;
 	private static Splash splash;
 	private static final long SPLASH_TIME = 2000;
-	
-	public static void splash(){
+
+	public static void splash() {
 		open();
 		try {
 			Thread.sleep(SPLASH_TIME);
@@ -45,6 +47,7 @@ public class Splash extends JFrame {
 	private Splash() {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 600, 600);
+		setIconImages(ImageManager.getSteamQueryLogoImgs());
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		contentPane.setLayout(new BorderLayout(0, 0));

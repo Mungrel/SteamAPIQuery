@@ -16,7 +16,7 @@ import javax.ws.rs.client.ClientBuilder;
 import javax.ws.rs.core.Response;
 
 public class ImageManager {
-	
+
 	private static String STEAM_QUERY_LOGO_PATH = "src/main/resources/images/SteamLogoVerySmall.png";
 	private static String STEAM_QUERY_LOGO_PATH_LARGE = "src/main/resources/images/SteamLogoSmall.png";
 
@@ -47,8 +47,8 @@ public class ImageManager {
 			return null;
 		}
 	}
-	
-	public static List<Image> getSteamQueryLogoImgs(){
+
+	public static List<Image> getSteamQueryLogoImgs() {
 		List<Image> imgs = new ArrayList<Image>();
 		imgs.add(new ImageIcon(STEAM_QUERY_LOGO_PATH_LARGE).getImage());
 		imgs.add(new ImageIcon(STEAM_QUERY_LOGO_PATH).getImage());
