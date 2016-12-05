@@ -15,8 +15,19 @@ public class Splash extends JFrame {
 
 	private JPanel contentPane;
 	private static Splash splash;
+	private static final long SPLASH_TIME = 2000;
+	
+	public static void splash(){
+		open();
+		try {
+			Thread.sleep(SPLASH_TIME);
+		} catch (InterruptedException e) {
+			System.out.println("Thread interrupted during splash");
+		}
+		close();
+	}
 
-	public static void open() {
+	private static void open() {
 		if (splash == null) {
 			splash = new Splash();
 		}
@@ -26,8 +37,9 @@ public class Splash extends JFrame {
 		splash.setVisible(true);
 	}
 
-	public static void close() {
+	private static void close() {
 		splash.setVisible(false);
+		splash.dispose();
 	}
 
 	private Splash() {

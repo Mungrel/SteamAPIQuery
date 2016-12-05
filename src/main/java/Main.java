@@ -7,10 +7,8 @@ import utils.FileManager;
 public class Main {
 
 	public static void main(String[] args) throws InterruptedException {
-		Splash.open();
+		Splash.splash();
 		checkAndBuildTmpDir();
-		Thread.sleep(2000);
-		Splash.close();
 		SearchFrame.open();
 	}
 
