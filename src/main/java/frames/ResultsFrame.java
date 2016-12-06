@@ -18,6 +18,7 @@ import domain.PlayerSummary;
 import panels.FriendsPanel;
 import panels.SummaryPanel;
 import utils.ImageManager;
+import javax.swing.JScrollPane;
 
 @SuppressWarnings("serial")
 public class ResultsFrame extends JFrame {
@@ -60,6 +61,10 @@ public class ResultsFrame extends JFrame {
 		JPanel friendsPanel = new FriendsPanel();
 		tabbedPane.addTab("Friends", null, friendsPanel, null);
 		friendsPanel.setLayout(null);
+		
+		JScrollPane scrollPane = new JScrollPane();
+		scrollPane.setBounds(0, 0, 407, 251);
+		friendsPanel.add(scrollPane);
 
 		JLabel displayNameLabel = new JLabel("DisplayName - SignInState");
 		if (ps != null) {
