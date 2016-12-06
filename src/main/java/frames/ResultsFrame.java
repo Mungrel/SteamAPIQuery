@@ -61,7 +61,7 @@ public class ResultsFrame extends JFrame {
 		tabbedPane.addTab("Friends", null, friendsPanel, null);
 		friendsPanel.setLayout(null);
 
-		JLabel displayNameLabel = new JLabel("DisplayName");
+		JLabel displayNameLabel = new JLabel("DisplayName - SignInState");
 		if (ps != null) {
 			String labelText = ps.getPersonaName() + " - " + ps.getPersonaState();
 			displayNameLabel.setText(labelText);
