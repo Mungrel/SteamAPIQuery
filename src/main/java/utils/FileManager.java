@@ -31,11 +31,13 @@ public class FileManager {
 	}
 	
 	public static boolean cacheIsEmpty(){
-		//TODO: Implement this and tie to 'Clear Now' button for cache clearing in OptionsFrame
-		return false;
+		File tmpDir = new File(TMP_DIR);
+		return (tmpDir.list().length == 0);
 	}
 	
 	public static String cacheSize(){
+		File tmpDir = new File(TMP_DIR);
+		long dirSizeBytes = tmpDir.length();
 		//TODO: For showing the current cache size next to 'Clear Now' button in KB/MB, whatever's appropriate
 		return null;
 	}
