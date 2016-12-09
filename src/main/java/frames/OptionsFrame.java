@@ -80,5 +80,9 @@ public class OptionsFrame extends JFrame {
 		btnOk.setBackground(Color.WHITE);
 		btnOk.setBounds(148, 221, 89, 23);
 		contentPane.add(btnOk);
+		
+		JLabel lblcacheSize = new JLabel("(Cache Size)");
+		lblcacheSize.setBounds(144, 40, 83, 14);
+		contentPane.add(lblcacheSize);
 	}
 }
