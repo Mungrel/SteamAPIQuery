@@ -29,5 +29,15 @@ public class FileManager {
 			file.mkdirs();
 		}
 	}
+	
+	public static boolean cacheIsEmpty(){
+		//TODO: Implement this and tie to 'Clear Now' button for cache clearing in OptionsFrame
+		return false;
+	}
+	
+	public static long cacheSize(){
+		//TODO: For showing the current cache size next to 'Clear Now' button
+		return 0;
+	}
 
 }
