@@ -8,6 +8,7 @@ import domain.PlayerSummary;
 import query.QueryManager;
 import utils.Fonts;
 import utils.ImageManager;
+import javax.swing.SwingConstants;
 
 @SuppressWarnings("serial")
 public class FriendStateContainer extends JPanel {
@@ -26,6 +27,12 @@ public class FriendStateContainer extends JPanel {
 		displayNameLabel.setBounds(84, 11, 222, 64);
 		displayNameLabel.setFont(Fonts.displayNameLabelFont);
 		add(displayNameLabel);
+		
+		JLabel lblFriendSince = new JLabel("FriendSince");
+		lblFriendSince.setHorizontalAlignment(SwingConstants.TRAILING);
+		lblFriendSince.setFont(Fonts.displayNameLabelFont);
+		lblFriendSince.setBounds(332, 11, 108, 64);
+		add(lblFriendSince);
 
 		// TODO: Assign relevant fields to FSC from PlayerSummary and Friend
 		// objects
