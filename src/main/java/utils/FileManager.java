@@ -35,9 +35,9 @@ public class FileManager {
 		return false;
 	}
 	
-	public static long cacheSize(){
-		//TODO: For showing the current cache size next to 'Clear Now' button
-		return 0;
+	public static String cacheSize(){
+		//TODO: For showing the current cache size next to 'Clear Now' button in KB/MB, whatever's appropriate
+		return null;
 	}
 
 }

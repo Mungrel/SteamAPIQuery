@@ -52,6 +52,9 @@ public class OptionsFrame extends JFrame {
 				FileManager.emptyTmpDir();
 			}
 		});
+		if (FileManager.cacheIsEmpty()){
+			btnClearNow.setEnabled(false); //Cache is empty, don't let them clear an empty cache
+		}
 		btnClearNow.setFocusable(false);
 		btnClearNow.setBackground(Color.WHITE);
 		btnClearNow.setBounds(20, 36, 114, 23);
@@ -81,7 +84,7 @@ public class OptionsFrame extends JFrame {
 		btnOk.setBounds(148, 221, 89, 23);
 		contentPane.add(btnOk);
 		
-		JLabel lblcacheSize = new JLabel("(Cache Size)");
+		JLabel lblcacheSize = new JLabel(FileManager.cacheSize());
 		lblcacheSize.setBounds(144, 40, 83, 14);
 		contentPane.add(lblcacheSize);
 	}
