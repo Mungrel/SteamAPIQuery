@@ -59,7 +59,7 @@ public class ResultsFrame extends JFrame {
 		playerSummaryPanel.setLayout(null);
 		tabbedPane.setEnabledAt(0, true);
 
-		JPanel friendsPanel = new FriendsPanel();
+		JPanel friendsPanel = new FriendsPanel(null);
 		tabbedPane.addTab("Friends", null, friendsPanel, null);
 		friendsPanel.setLayout(null);
 
