@@ -18,6 +18,7 @@ import javax.swing.border.TitledBorder;
 import domain.PlayerSummary;
 import panels.FriendsPanel;
 import panels.SummaryPanel;
+import utils.Fonts;
 import utils.ImageManager;
 
 @SuppressWarnings("serial")
@@ -71,7 +72,7 @@ public class ResultsFrame extends JFrame {
 			String labelText = ps.getPersonaName() + " - " + ps.getPersonaState();
 			displayNameLabel.setText(labelText);
 		}
-		displayNameLabel.setFont(new Font("Segoe UI", Font.PLAIN, 15));
+		displayNameLabel.setFont(Fonts.displayNameLabelFont);
 		displayNameLabel.setBounds(10, 11, 338, 64);
 		contentPane.add(displayNameLabel);
 

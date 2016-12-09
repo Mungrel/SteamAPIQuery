@@ -20,6 +20,10 @@ public class FriendStateContainer extends JPanel {
 		avatarImgLbl.setBounds(10, 11, 64, 64);
 		avatarImgLbl.setIcon(ImageManager.createImageIcon(friendSummary.getAvatarImageURL()));
 		add(avatarImgLbl);
+		
+		JLabel displayNameLabel = new JLabel("DisplayName - SignInState");
+		displayNameLabel.setBounds(84, 11, 222, 75);
+		add(displayNameLabel);
 
 		// TODO: Assign relevant fields to FSC from PlayerSummary and Friend
 		// objects
