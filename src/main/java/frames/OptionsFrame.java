@@ -12,6 +12,7 @@ import javax.swing.border.EmptyBorder;
 
 import utils.FileManager;
 import utils.ImageManager;
+import javax.swing.JCheckBox;
 
 @SuppressWarnings("serial")
 public class OptionsFrame extends JFrame {
@@ -91,5 +92,14 @@ public class OptionsFrame extends JFrame {
 		lblcacheSize = new JLabel(FileManager.cacheSize());
 		lblcacheSize.setBounds(144, 40, 83, 14);
 		contentPane.add(lblcacheSize);
+		
+		JLabel lblSplash = new JLabel("Splash");
+		lblSplash.setBounds(10, 70, 46, 14);
+		contentPane.add(lblSplash);
+		
+		JCheckBox chckbxDisplaySplashOn = new JCheckBox("Display splash on startup");
+		chckbxDisplaySplashOn.setSelected(true);
+		chckbxDisplaySplashOn.setBounds(20, 91, 185, 23);
+		contentPane.add(chckbxDisplaySplashOn);
 	}
 }
