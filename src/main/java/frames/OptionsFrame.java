@@ -80,6 +80,7 @@ public class OptionsFrame extends JFrame {
 			@Override
 			public void actionPerformed(ActionEvent e) {
 				// TODO Persist options
+				OptionsFrame.close();
 			}
 		});
 		btnOk.setFocusable(false);
