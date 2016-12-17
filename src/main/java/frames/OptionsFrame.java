@@ -20,6 +20,7 @@ public class OptionsFrame extends JFrame {
 	private static OptionsFrame optionsFrame;
 	private static JLabel lblcacheSize;
 	private static JButton btnClearNow;
+	private static JCheckBox chckbxDisplaySplash;
 
 	private JPanel contentPane;
 
@@ -89,6 +90,7 @@ public class OptionsFrame extends JFrame {
 			@Override
 			public void actionPerformed(ActionEvent e) {
 				// TODO Persist options
+				boolean displaySplash = chckbxDisplaySplash.isSelected();
 				OptionsFrame.close();
 			}
 		});
@@ -105,7 +107,7 @@ public class OptionsFrame extends JFrame {
 		lblSplash.setBounds(10, 70, 46, 14);
 		contentPane.add(lblSplash);
 
-		JCheckBox chckbxDisplaySplash = new JCheckBox("Display splash on startup");
+		chckbxDisplaySplash = new JCheckBox("Display splash on startup");
 		chckbxDisplaySplash.setSelected(true);
 		chckbxDisplaySplash.setFocusable(false);
 		chckbxDisplaySplash.setBounds(20, 91, 185, 23);
