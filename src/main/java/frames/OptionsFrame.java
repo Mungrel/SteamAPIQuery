@@ -54,6 +54,7 @@ public class OptionsFrame extends JFrame {
 			@Override
 			public void actionPerformed(ActionEvent e) {
 				FileManager.emptyTmpDir();
+				lblcacheSize.setText(FileManager.cacheSize());
 			}
 		});
 		if (FileManager.cacheIsEmpty()){
