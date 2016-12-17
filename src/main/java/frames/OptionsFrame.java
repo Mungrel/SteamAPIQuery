@@ -98,9 +98,10 @@ public class OptionsFrame extends JFrame {
 		lblSplash.setBounds(10, 70, 46, 14);
 		contentPane.add(lblSplash);
 		
-		JCheckBox chckbxDisplaySplashOn = new JCheckBox("Display splash on startup");
-		chckbxDisplaySplashOn.setSelected(true);
-		chckbxDisplaySplashOn.setBounds(20, 91, 185, 23);
-		contentPane.add(chckbxDisplaySplashOn);
+		JCheckBox chckbxDisplaySplash = new JCheckBox("Display splash on startup");
+		chckbxDisplaySplash.setSelected(true);
+		chckbxDisplaySplash.setFocusable(false);
+		chckbxDisplaySplash.setBounds(20, 91, 185, 23);
+		contentPane.add(chckbxDisplaySplash);
 	}
 }
