@@ -35,11 +35,15 @@ public class FileManager {
 		return (tmpDir.list().length == 0);
 	}
 	
+	// Adapted from: http://programming.guide/java/formatting-byte-size-to-human-readable-format.html
+	// (17/12/16)
 	public static String cacheSize(){
-		File tmpDir = new File(TMP_DIR);
-		long dirSizeBytes = tmpDir.length();
-		//TODO: For showing the current cache size next to 'Clear Now' button in KB/MB, whatever's appropriate
-		return null;
+		long bytes = new File(TMP_DIR).length();
+		int unit = 1024;
+	    if (bytes < unit) return bytes + " B";
+	    int exp = (int) (Math.log(bytes) / Math.log(unit));
+	    char pre = ("KMGTPE").charAt(exp-1);
+	    return String.format("%.1f %sB", bytes / Math.pow(unit, exp), pre);
 	}
 
 }

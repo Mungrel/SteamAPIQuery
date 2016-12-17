@@ -17,6 +17,7 @@ import utils.ImageManager;
 public class OptionsFrame extends JFrame {
 
 	private static OptionsFrame optionsFrame;
+	private static JLabel lblcacheSize;
 
 	private JPanel contentPane;
 
@@ -24,6 +25,8 @@ public class OptionsFrame extends JFrame {
 		if (optionsFrame == null) {
 			optionsFrame = new OptionsFrame();
 		}
+		// Update cache size label
+		lblcacheSize.setText(FileManager.cacheSize());
 		optionsFrame.setLocationRelativeTo(null);
 		optionsFrame.setVisible(true);
 	}
@@ -84,7 +87,7 @@ public class OptionsFrame extends JFrame {
 		btnOk.setBounds(148, 221, 89, 23);
 		contentPane.add(btnOk);
 		
-		JLabel lblcacheSize = new JLabel(FileManager.cacheSize());
+		lblcacheSize = new JLabel(FileManager.cacheSize());
 		lblcacheSize.setBounds(144, 40, 83, 14);
 		contentPane.add(lblcacheSize);
 	}
