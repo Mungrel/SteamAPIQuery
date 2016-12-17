@@ -19,6 +19,7 @@ public class OptionsFrame extends JFrame {
 
 	private static OptionsFrame optionsFrame;
 	private static JLabel lblcacheSize;
+	private static JButton btnClearNow;
 
 	private JPanel contentPane;
 
@@ -28,6 +29,10 @@ public class OptionsFrame extends JFrame {
 		}
 		// Update cache size label
 		lblcacheSize.setText(FileManager.cacheSize());
+		
+		// Enable 'Clear Now' button if cache not empty
+		btnClearNow.setEnabled(!FileManager.cacheIsEmpty());
+		
 		optionsFrame.setLocationRelativeTo(null);
 		optionsFrame.setVisible(true);
 	}
@@ -36,7 +41,7 @@ public class OptionsFrame extends JFrame {
 		optionsFrame.setVisible(false);
 	}
 
-	public OptionsFrame() {
+	private OptionsFrame() {
 		setTitle("SteamQuery - Options");
 		setBounds(100, 100, 360, 294);
 		setIconImages(ImageManager.getSteamQueryLogoImgs());
@@ -49,12 +54,13 @@ public class OptionsFrame extends JFrame {
 		lblImageCache.setBounds(10, 11, 83, 14);
 		contentPane.add(lblImageCache);
 
-		JButton btnClearNow = new JButton("Clear now");
+		btnClearNow = new JButton("Clear now");
 		btnClearNow.addActionListener(new ActionListener() {
 			@Override
 			public void actionPerformed(ActionEvent e) {
 				FileManager.emptyTmpDir();
 				lblcacheSize.setText(FileManager.cacheSize());
+				btnClearNow.setEnabled(false);
 			}
 		});
 		if (FileManager.cacheIsEmpty()){
