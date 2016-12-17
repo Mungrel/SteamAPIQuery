@@ -31,8 +31,7 @@ public class FileManager {
 	}
 	
 	public static boolean cacheIsEmpty(){
-		File tmpDir = new File(TMP_DIR);
-		return (tmpDir.list().length == 0);
+		return (cacheSize().equals("0 B"));
 	}
 	
 	public static String cacheSize(){
