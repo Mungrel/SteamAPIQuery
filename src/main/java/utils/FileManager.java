@@ -29,30 +29,33 @@ public class FileManager {
 			file.mkdirs();
 		}
 	}
-	
-	public static boolean cacheIsEmpty(){
+
+	public static boolean cacheIsEmpty() {
 		return (cacheSize().equals("0 B"));
 	}
-	
-	public static String cacheSize(){
+
+	public static String cacheSize() {
 		File dir = new File(TMP_DIR);
 		long bytes = 0;
-		
-		// We'll only sum file lengths for surface of directory, shouldn't need to recurse at this stage
+
+		// We'll only sum file lengths for surface of directory, shouldn't need
+		// to recurse at this stage
 		// As our tmp dir likely won't have sub directories
-		
-		for (File file : dir.listFiles()){
+
+		for (File file : dir.listFiles()) {
 			bytes += file.length();
 		}
-		
-		//Formatting the string, converting to B/KB/MB, whatever's appropriate
-		// Adapted from: http://programming.guide/java/formatting-byte-size-to-human-readable-format.html
+
+		// Formatting the string, converting to B/KB/MB, whatever's appropriate
+		// Adapted from:
+		// http://programming.guide/java/formatting-byte-size-to-human-readable-format.html
 		// (17/12/16)
 		int unit = 1024;
-	    if (bytes < unit) return bytes + " B";
-	    int exp = (int) (Math.log(bytes) / Math.log(unit));
-	    char pre = ("KMGTPE").charAt(exp-1);
-	    return String.format("%.1f %sB", bytes / Math.pow(unit, exp), pre);
+		if (bytes < unit)
+			return bytes + " B";
+		int exp = (int) (Math.log(bytes) / Math.log(unit));
+		char pre = ("KMGTPE").charAt(exp - 1);
+		return String.format("%.1f %sB", bytes / Math.pow(unit, exp), pre);
 	}
 
 }
