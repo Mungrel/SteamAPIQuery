@@ -90,6 +90,7 @@ public class OptionsFrame extends JFrame {
 			@Override
 			public void actionPerformed(ActionEvent e) {
 				// TODO Persist options
+				@SuppressWarnings("unused") // tmp warning dodge
 				boolean displaySplash = chckbxDisplaySplash.isSelected();
 				OptionsFrame.close();
 			}
