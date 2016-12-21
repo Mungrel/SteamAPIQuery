@@ -1,16 +1,18 @@
 package utils;
 
+import com.google.gson.Gson;
+
 import domain.Settings;
 
 public class SettingsManager {
 	
 	public Settings fromJSON(String json){
-		//TODO: implement this
-		return new Settings();
+		Gson gson = new Gson();
+		return gson.fromJson(json, Settings.class);
 	}
 	
 	public String toJSON(Settings settings){
-		//TODO: implement this
-		return null;
+		Gson gson = new Gson();
+		return gson.toJson(settings);
 	}
 }
