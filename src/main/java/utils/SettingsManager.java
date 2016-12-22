@@ -21,6 +21,7 @@ public class SettingsManager {
 		while((line = br.readLine()) != null){
 			json += line;
 		}
+		br.close();
 		return json;
 	}
 
