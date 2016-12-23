@@ -11,6 +11,7 @@ import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 
+import domain.Settings;
 import utils.FileManager;
 import utils.ImageManager;
 
@@ -21,10 +22,11 @@ public class OptionsFrame extends JFrame {
 	private static JLabel lblcacheSize;
 	private static JButton btnClearNow;
 	private static JCheckBox chckbxDisplaySplash;
+	private static JCheckBox chckbxClearCache;
 
 	private JPanel contentPane;
 
-	public static void open() {
+	public static void open(Settings settings) {
 		if (optionsFrame == null) {
 			optionsFrame = new OptionsFrame();
 		}
@@ -34,12 +36,23 @@ public class OptionsFrame extends JFrame {
 		// Enable 'Clear Now' button if cache not empty
 		btnClearNow.setEnabled(!FileManager.cacheIsEmpty());
 
+		if (settings != null){
+			// TODO: Apply existing settings to frame
+		}
+		
 		optionsFrame.setLocationRelativeTo(null);
 		optionsFrame.setVisible(true);
 	}
 
 	public static void close() {
 		optionsFrame.setVisible(false);
+	}
+	
+	public static Settings getBackingSettings(){
+		Settings settings = new Settings();
+		settings.setClearCacheStartup(chckbxDisplaySplash.isSelected());
+		// TODO: get display splash setting
+		return settings;
 	}
 
 	private OptionsFrame() {
@@ -105,13 +118,17 @@ public class OptionsFrame extends JFrame {
 		contentPane.add(lblcacheSize);
 
 		JLabel lblSplash = new JLabel("Splash");
-		lblSplash.setBounds(10, 70, 46, 14);
+		lblSplash.setBounds(10, 108, 46, 14);
 		contentPane.add(lblSplash);
 
 		chckbxDisplaySplash = new JCheckBox("Display splash on startup");
 		chckbxDisplaySplash.setSelected(true);
 		chckbxDisplaySplash.setFocusable(false);
-		chckbxDisplaySplash.setBounds(20, 91, 185, 23);
+		chckbxDisplaySplash.setBounds(20, 129, 185, 23);
 		contentPane.add(chckbxDisplaySplash);
+		
+		chckbxClearCache = new JCheckBox("Clear cache on startup");
+		chckbxClearCache.setBounds(10, 66, 156, 23);
+		contentPane.add(chckbxClearCache);
 	}
 }
