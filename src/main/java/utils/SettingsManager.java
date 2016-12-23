@@ -1,8 +1,9 @@
 package utils;
 
 import java.io.BufferedReader;
-import java.io.FileNotFoundException;
+import java.io.BufferedWriter;
 import java.io.FileReader;
+import java.io.FileWriter;
 import java.io.IOException;
 
 import com.google.gson.Gson;
@@ -13,7 +14,34 @@ public class SettingsManager {
 	
 	private static String SETTINGS_FILE_PATH = "config";
 	
-	private String readSettings() throws IOException{
+	public Settings fromJSON() {
+		String json = null;
+		try {
+			json = readSettingsFile();
+		} catch (IOException e) {
+			System.out.println("Could not read settings file");
+		}
+		Gson gson = new Gson();
+		return gson.fromJson(json, Settings.class);
+	}
+
+	public void toJSON(Settings settings) {
+		Gson gson = new Gson();
+		try {
+			writeSettingsFile(gson.toJson(settings));
+		} catch (IOException e) {
+			System.out.println("Could not write to settings file");
+		}
+	}
+	
+	private void writeSettingsFile(String json) throws IOException{
+		BufferedWriter bw = new BufferedWriter(new FileWriter(SETTINGS_FILE_PATH));
+		
+		bw.write(json);
+		bw.close();
+	}
+	
+	private String readSettingsFile() throws IOException{
 		BufferedReader br = new BufferedReader(new FileReader(SETTINGS_FILE_PATH));
 		
 		String json = "";
@@ -23,16 +51,6 @@ public class SettingsManager {
 		}
 		br.close();
 		return json;
-	}
-
-	public Settings fromJSON(String json) {
-		Gson gson = new Gson();
-		return gson.fromJson(json, Settings.class);
-	}
-
-	public String toJSON(Settings settings) {
-		Gson gson = new Gson();
-		return gson.toJson(settings);
 	}
 	
 }
