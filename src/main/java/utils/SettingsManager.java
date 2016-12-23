@@ -14,7 +14,7 @@ public class SettingsManager {
 	
 	private static String SETTINGS_FILE_PATH = "config";
 	
-	public Settings fromJSON() {
+	public static Settings getSettings() {
 		String json = null;
 		try {
 			json = readSettingsFile();
@@ -25,7 +25,7 @@ public class SettingsManager {
 		return gson.fromJson(json, Settings.class);
 	}
 
-	public void toJSON(Settings settings) {
+	public static void saveSettings(Settings settings) {
 		Gson gson = new Gson();
 		try {
 			writeSettingsFile(gson.toJson(settings));
@@ -34,14 +34,14 @@ public class SettingsManager {
 		}
 	}
 	
-	private void writeSettingsFile(String json) throws IOException{
+	private static void writeSettingsFile(String json) throws IOException{
 		BufferedWriter bw = new BufferedWriter(new FileWriter(SETTINGS_FILE_PATH));
 		
 		bw.write(json);
 		bw.close();
 	}
 	
-	private String readSettingsFile() throws IOException{
+	private static String readSettingsFile() throws IOException{
 		BufferedReader br = new BufferedReader(new FileReader(SETTINGS_FILE_PATH));
 		
 		String json = "";
@@ -55,7 +55,5 @@ public class SettingsManager {
 	
 }
 
-// pull json string from settings file
-// marshall to Settings object
 // execute any settings, e.g. show splash
 // reflect saved state in options frame

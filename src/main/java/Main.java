@@ -1,6 +1,8 @@
+import domain.Settings;
 import frames.SearchFrame;
 import frames.Splash;
 import utils.FileManager;
+import utils.SettingsManager;
 
 public class Main {
 
@@ -9,8 +11,12 @@ public class Main {
 	}
 	
 	private static void startupRoutine(){
-		Splash.splash();
 		FileManager.checkAndBuildTmpDir();
+		Settings settings = SettingsManager.getSettings();
+		if (settings.isSplashStartup())
+			Splash.splash();
+		if (settings.isClearCacheStartup())
+			FileManager.emptyTmpDir();
 		SearchFrame.open();
 	}
 }
