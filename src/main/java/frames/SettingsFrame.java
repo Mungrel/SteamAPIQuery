@@ -36,10 +36,10 @@ public class SettingsFrame extends JFrame {
 		// Enable 'Clear Now' button if cache not empty
 		btnClearNow.setEnabled(!FileManager.cacheIsEmpty());
 
-		if (settings != null){
+		if (settings != null) {
 			// TODO: Apply existing settings to frame
 		}
-		
+
 		optionsFrame.setLocationRelativeTo(null);
 		optionsFrame.setVisible(true);
 	}
@@ -47,8 +47,8 @@ public class SettingsFrame extends JFrame {
 	public static void close() {
 		optionsFrame.setVisible(false);
 	}
-	
-	public static Settings getBackingSettings(){
+
+	public static Settings getBackingSettings() {
 		Settings settings = new Settings();
 		settings.setClearCacheStartup(chckbxDisplaySplash.isSelected());
 		// TODO: get display splash setting
@@ -126,7 +126,7 @@ public class SettingsFrame extends JFrame {
 		chckbxDisplaySplash.setFocusable(false);
 		chckbxDisplaySplash.setBounds(20, 129, 185, 23);
 		contentPane.add(chckbxDisplaySplash);
-		
+
 		chckbxClearCache = new JCheckBox("Clear cache on startup");
 		chckbxClearCache.setBounds(10, 66, 156, 23);
 		contentPane.add(chckbxClearCache);

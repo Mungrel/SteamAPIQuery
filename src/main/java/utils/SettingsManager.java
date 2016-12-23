@@ -11,9 +11,9 @@ import com.google.gson.Gson;
 import domain.Settings;
 
 public class SettingsManager {
-	
+
 	private static String SETTINGS_FILE_PATH = "config";
-	
+
 	public static Settings getSettings() {
 		String json = null;
 		try {
@@ -33,26 +33,26 @@ public class SettingsManager {
 			System.out.println("Could not write to settings file");
 		}
 	}
-	
-	private static void writeSettingsFile(String json) throws IOException{
+
+	private static void writeSettingsFile(String json) throws IOException {
 		BufferedWriter bw = new BufferedWriter(new FileWriter(SETTINGS_FILE_PATH));
-		
+
 		bw.write(json);
 		bw.close();
 	}
-	
-	private static String readSettingsFile() throws IOException{
+
+	private static String readSettingsFile() throws IOException {
 		BufferedReader br = new BufferedReader(new FileReader(SETTINGS_FILE_PATH));
-		
+
 		String json = "";
 		String line = null;
-		while((line = br.readLine()) != null){
+		while ((line = br.readLine()) != null) {
 			json += line;
 		}
 		br.close();
 		return json;
 	}
-	
+
 }
 
 // execute any settings, e.g. show splash

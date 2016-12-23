@@ -11,8 +11,8 @@ public class Main {
 		startupRoutine();
 		SearchFrame.open();
 	}
-	
-	private static void startupRoutine(){
+
+	private static void startupRoutine() {
 		Settings settings = SettingsManager.getSettings();
 		if (settings.isSplashStartup())
 			Splash.splash();
