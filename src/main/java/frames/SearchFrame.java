@@ -84,7 +84,7 @@ public class SearchFrame extends JFrame {
 		btnOptions.addActionListener(new ActionListener() {
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				OptionsFrame.open();
+				OptionsFrame.open(null); //TODO: pass proper settings object
 			}
 		});
 		btnOptions.setBackground(Color.WHITE);
