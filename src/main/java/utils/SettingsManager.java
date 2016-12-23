@@ -11,10 +11,10 @@ import domain.Settings;
 
 public class SettingsManager {
 	
-	private static String settingsFilePath = "config";
+	private static String SETTINGS_FILE_PATH = "config";
 	
 	private String readSettings() throws IOException{
-		BufferedReader br = new BufferedReader(new FileReader(settingsFilePath));
+		BufferedReader br = new BufferedReader(new FileReader(SETTINGS_FILE_PATH));
 		
 		String json = "";
 		String line = null;
@@ -34,6 +34,7 @@ public class SettingsManager {
 		Gson gson = new Gson();
 		return gson.toJson(settings);
 	}
+	
 }
 
 // pull json string from settings file
