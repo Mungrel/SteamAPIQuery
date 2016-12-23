@@ -16,9 +16,9 @@ import utils.FileManager;
 import utils.ImageManager;
 
 @SuppressWarnings("serial")
-public class OptionsFrame extends JFrame {
+public class SettingsFrame extends JFrame {
 
-	private static OptionsFrame optionsFrame;
+	private static SettingsFrame optionsFrame;
 	private static JLabel lblcacheSize;
 	private static JButton btnClearNow;
 	private static JCheckBox chckbxDisplaySplash;
@@ -28,7 +28,7 @@ public class OptionsFrame extends JFrame {
 
 	public static void open(Settings settings) {
 		if (optionsFrame == null) {
-			optionsFrame = new OptionsFrame();
+			optionsFrame = new SettingsFrame();
 		}
 		// Update cache size label
 		lblcacheSize.setText(FileManager.cacheSize());
@@ -55,7 +55,7 @@ public class OptionsFrame extends JFrame {
 		return settings;
 	}
 
-	private OptionsFrame() {
+	private SettingsFrame() {
 		setTitle("SteamQuery - Options");
 		setBounds(100, 100, 360, 294);
 		setIconImages(ImageManager.getSteamQueryLogoImgs());
@@ -90,7 +90,7 @@ public class OptionsFrame extends JFrame {
 		btnCancel.addActionListener(new ActionListener() {
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				OptionsFrame.close();
+				SettingsFrame.close();
 			}
 		});
 		btnCancel.setFocusable(false);
@@ -105,7 +105,7 @@ public class OptionsFrame extends JFrame {
 				// TODO Persist options
 				@SuppressWarnings("unused") // tmp warning dodge
 				boolean displaySplash = chckbxDisplaySplash.isSelected();
-				OptionsFrame.close();
+				SettingsFrame.close();
 			}
 		});
 		btnOk.setFocusable(false);
