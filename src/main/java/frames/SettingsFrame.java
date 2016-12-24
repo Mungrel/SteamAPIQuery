@@ -38,6 +38,8 @@ public class SettingsFrame extends JFrame {
 
 		if (settings != null) {
 			// TODO: Apply existing settings to frame
+			chckbxDisplaySplash.setSelected(settings.isSplashStartup());
+			chckbxClearCache.setSelected(settings.isClearCacheStartup());
 		}
 
 		optionsFrame.setLocationRelativeTo(null);
