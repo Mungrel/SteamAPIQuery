@@ -14,6 +14,7 @@ import javax.swing.border.EmptyBorder;
 import domain.Settings;
 import utils.FileManager;
 import utils.ImageManager;
+import utils.SettingsManager;
 
 @SuppressWarnings("serial")
 public class SettingsFrame extends JFrame {
@@ -37,7 +38,6 @@ public class SettingsFrame extends JFrame {
 		btnClearNow.setEnabled(!FileManager.cacheIsEmpty());
 
 		if (settings != null) {
-			// TODO: Apply existing settings to frame
 			chckbxDisplaySplash.setSelected(settings.isSplashStartup());
 			chckbxClearCache.setSelected(settings.isClearCacheStartup());
 		}
@@ -52,8 +52,8 @@ public class SettingsFrame extends JFrame {
 
 	public static Settings getBackingSettings() {
 		Settings settings = new Settings();
-		settings.setClearCacheStartup(chckbxDisplaySplash.isSelected());
-		// TODO: get display splash setting
+		settings.setClearCacheStartup(chckbxClearCache.isSelected());
+		settings.setSplashStartup(chckbxDisplaySplash.isSelected());
 		return settings;
 	}
 
@@ -104,9 +104,7 @@ public class SettingsFrame extends JFrame {
 		btnOk.addActionListener(new ActionListener() {
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				// TODO Persist options
-				@SuppressWarnings("unused") // tmp warning dodge
-				boolean displaySplash = chckbxDisplaySplash.isSelected();
+				SettingsManager.saveSettings(getBackingSettings());
 				SettingsFrame.close();
 			}
 		});
